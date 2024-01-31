@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /rob_prog/simple_planner/catkin_ws/install/setup.sh
