@@ -1,0 +1,19 @@
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:2[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:14:20:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kimage_path[m[K’
+   14 |     ImageMap[34m[K([m[Kstring[01;31m[K [m[K[32m[Kimage_path[m[K);
+      |             [34m[K~[m[K      [01;31m[K^[m[K[32m[K~~~~~~~~~~[m[K
+      |                    [32m[K)[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:9:132:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KImageMap::ImageMap(const char [106])[m[K’
+    9 |     auto map = ImageMap("/Users/salvatore/Desktop/Università/Development/RobotProgramming/ROS/docker_volume/planner_wksp/img.png"[01;31m[K)[m[K;
+      |                                                                                                                                    [01;31m[K^[m[K
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:2[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:13:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr ImageMap::ImageMap()[m[K’
+   13 | class [01;36m[KImageMap[m[K {
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:13:7:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:13:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr ImageMap::ImageMap(const ImageMap&)[m[K’
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:13:7:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst char [106][m[K’ to ‘[01m[Kconst ImageMap&[m[K’
+make[2]: *** [CMakeFiles/simple_planner_node.dir/build.make:63: CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:276: CMakeFiles/simple_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

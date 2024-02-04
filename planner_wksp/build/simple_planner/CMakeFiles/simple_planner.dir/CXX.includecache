@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp
+ImageMap.h
+/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h
+
+/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h
+fstream
+-
+iostream
+-
+arpa/inet.h
+-
+

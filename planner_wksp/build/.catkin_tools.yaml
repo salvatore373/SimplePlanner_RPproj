@@ -1,0 +1,6 @@
+devel_space: /rob_prog/planner_wksp/devel
+install: false
+install_space: /rob_prog/planner_wksp/install
+profile: default
+source_space: /rob_prog/planner_wksp/src
+workspace: /rob_prog/planner_wksp

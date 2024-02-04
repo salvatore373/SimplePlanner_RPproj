@@ -1,2 +1,0 @@
-
--DCATKIN_DEVEL_PREFIX=/rob_prog/simple_planner/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/rob_prog/simple_planner/catkin_ws/install -G Unix Makefiles

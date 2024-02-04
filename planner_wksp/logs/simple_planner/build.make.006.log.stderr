@@ -1,0 +1,25 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:9:132:[m[K [01;31m[Kerror: [m[K‘[01m[KImageMap::ImageMap(std::string)[m[K’ is private within this context
+    9 |     auto map = ImageMap("/Users/salvatore/Desktop/Università/Development/RobotProgramming/ROS/docker_volume/planner_wksp/img.png"[01;31m[K)[m[K;
+      |                                                                                                                                    [01;31m[K^[m[K
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:2[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:13:5:[m[K [01;36m[Knote: [m[Kdeclared private here
+   13 |     [01;36m[KImageMap[m[K(std::string image_path);
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:9:132:[m[K [01;31m[Kerror: [m[K‘[01m[KImageMap::~ImageMap()[m[K’ is private within this context
+    9 |     auto map = ImageMap("/Users/salvatore/Desktop/Università/Development/RobotProgramming/ROS/docker_volume/planner_wksp/img.png"[01;31m[K)[m[K;
+      |                                                                                                                                    [01;31m[K^[m[K
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:2[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:14:5:[m[K [01;36m[Knote: [m[Kdeclared private here
+   14 |     [01;36m[K~[m[KImageMap();
+      |     [01;36m[K^[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:9:132:[m[K [01;31m[Kerror: [m[K‘[01m[KImageMap::~ImageMap()[m[K’ is private within this context
+    9 |     auto map = ImageMap("/Users/salvatore/Desktop/Università/Development/RobotProgramming/ROS/docker_volume/planner_wksp/img.png"[01;31m[K)[m[K;
+      |                                                                                                                                    [01;31m[K^[m[K
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:2[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:14:5:[m[K [01;36m[Knote: [m[Kdeclared private here
+   14 |     [01;36m[K~[m[KImageMap();
+      |     [01;36m[K^[m[K
+make[2]: *** [CMakeFiles/simple_planner_node.dir/build.make:63: CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:276: CMakeFiles/simple_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

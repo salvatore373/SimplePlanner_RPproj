@@ -1,0 +1,18 @@
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:2[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:15:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kstring[m[K’ does not name a type; did you mean ‘[01m[Kstdin[m[K’?
+   15 |         ImageMap(const [01;31m[Kstring[m[K image_path);
+      |                        [01;31m[K^~~~~~[m[K
+      |                        [32m[Kstdin[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:9:25:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kconst char*[m[K’ to ‘[01m[Kint[m[K’ [[01;31m[K-fpermissive[m[K]
+    9 |     auto map = ImageMap([01;31m[K"/Users/salvatore/Desktop/Università/Development/RobotProgramming/ROS/docker_volume/planner_wksp/img.png"[m[K);
+      |                         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                         [01;31m[K|[m[K
+      |                         [01;31m[Kconst char*[m[K
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:2[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:15:31:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[KImageMap::ImageMap(int)[m[K’
+   15 |         ImageMap([01;36m[Kconst string image_path[m[K);
+      |                  [01;36m[K~~~~~~~~~~~~~^~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/simple_planner_node.dir/build.make:63: CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:276: CMakeFiles/simple_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

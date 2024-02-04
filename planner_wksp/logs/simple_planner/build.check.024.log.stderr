@@ -1,0 +1,9 @@
+[31m[1mCMake Error[0m at /rob_prog/planner_wksp/src/simple_planner/CMakeLists.txt:151 (add_subdirectory):
+  The source directory
+
+    /rob_prog/planner_wksp/src/simple_planner/src
+
+  does not contain a CMakeLists.txt file.
+
+
+make: *** [Makefile:378: cmake_check_build_system] Error 1

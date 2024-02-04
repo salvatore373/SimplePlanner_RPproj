@@ -1,0 +1,9 @@
+[35m[1mScanning dependencies of target planner_internal[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o[0m
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:[m[K In constructor ‘[01m[KImageMap::ImageMap()[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:12:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kdims[m[K’ was not declared in this scope
+   12 |     cout << "width: " << [01;31m[Kdims[m[K[0] << " height: " << dims[1] << endl;
+      |                          [01;31m[K^~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:63: CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

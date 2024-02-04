@@ -1,0 +1,13 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:9:1:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen[m[K’ does not name a type
+    9 | [01;31m[KEigen[m[K::Vector2d get_image_width_height(std::string path) {
+      | [01;31m[K^~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:[m[K In constructor ‘[01m[KImageMap::ImageMap(const char*)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:24:5:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen[m[K’ has not been declared
+   24 |     [01;31m[KEigen[m[K::Vector2d dims = get_image_width_height(image_path);
+      |     [01;31m[K^~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:26:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kdims[m[K’ was not declared in this scope
+   26 |     cout << "width: " << [01;31m[Kdims[m[K[0] << " height: " << dims[1] << endl;
+      |                          [01;31m[K^~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:63: CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:278: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
