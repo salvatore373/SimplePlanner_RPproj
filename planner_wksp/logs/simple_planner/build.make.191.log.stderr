@@ -1,0 +1,28 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:[m[K In member function ‘[01m[KEigen::MatrixXi UniformCostSearch::computeRowDerivative(Eigen::MatrixXi) const[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:16:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kc[m[K’ was not declared in this scope
+   16 |             res(i, j) = map(i + 1, [01;31m[Kc[m[K) - map(i - 1, c);
+      |                                    [01;31m[K^[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:[m[K In member function ‘[01m[KEigen::MatrixXi UniformCostSearch::computeColumnDerivative(Eigen::MatrixXi) const[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:32:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kc[m[K’ was not declared in this scope
+   32 |             res(i, j) = map(i, [01;31m[Kc[m[K + 1) - map(i, c - 1);
+      |                                [01;31m[K^[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:[m[K In member function ‘[01m[KEigen::MatrixXi UniformCostSearch::computeMagnitudeDerivative(Eigen::MatrixXi) const[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:48:37:[m[K [01;31m[Kerror: [m[K‘[01m[KcomputeColDerivative[m[K’ was not declared in this scope; did you mean ‘[01m[KcomputeRowDerivative[m[K’?
+   48 |     Eigen::MatrixXi colDerivative = [01;31m[KcomputeColDerivative[m[K(map);
+      |                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KcomputeRowDerivative[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:53:60:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::MatrixXi[m[K’ {aka ‘[01m[Kclass Eigen::Matrix<int, -1, -1>[m[K’} has no member named ‘[01m[Kat[m[K’; did you mean ‘[01m[Kdata[m[K’?
+   53 |             Eigen::Vector2f cell_derivatives(rowDerivative.[01;31m[Kat[m[K(r, c), colDerivative.at(r, c));
+      |                                                            [01;31m[K^~[m[K
+      |                                                            [32m[Kdata[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:53:84:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::MatrixXi[m[K’ {aka ‘[01m[Kclass Eigen::Matrix<int, -1, -1>[m[K’} has no member named ‘[01m[Kat[m[K’; did you mean ‘[01m[Kdata[m[K’?
+   53 |             Eigen::Vector2f cell_derivatives(rowDerivative.at(r, c), colDerivative.[01;31m[Kat[m[K(r, c));
+      |                                                                                    [01;31m[K^~[m[K
+      |                                                                                    [32m[Kdata[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:54:17:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::MatrixXi[m[K’ {aka ‘[01m[Kclass Eigen::Matrix<int, -1, -1>[m[K’} has no member named ‘[01m[Kat[m[K’; did you mean ‘[01m[Kdata[m[K’?
+   54 |             res.[01;31m[Kat[m[K(r, c) = cell_derivatives.squaredNorm();
+      |                 [01;31m[K^~[m[K
+      |                 [32m[Kdata[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:102: CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

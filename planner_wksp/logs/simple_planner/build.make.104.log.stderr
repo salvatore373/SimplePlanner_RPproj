@@ -1,0 +1,41 @@
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.h:14:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kgeometry_msgs[m[K’ does not name a type
+   14 |     void retrievePose(const [01;31m[Kgeometry_msgs[m[K::PoseWithCovariance::ConstPtr &msg);
+      |                             [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.h:14:62:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+   14 |     void retrievePose(const geometry_msgs::PoseWithCovariance[01;31m[K::[m[KConstPtr &msg);
+      |                                                              [01;31m[K^~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.h:14:62:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+   14 |     void retrievePose[34m[K([m[Kconst geometry_msgs::PoseWithCovariance[01;31m[K:[m[K[32m[K:[m[KConstPtr &msg);
+      |                      [34m[K~[m[K                                       [01;31m[K^[m[K[32m[K~[m[K
+      |                                                              [32m[K)[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.h:14:44:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   14 |     void retrievePose(const geometry_msgs::[01;31m[KPoseWithCovariance[m[K::ConstPtr &msg);
+      |                                            [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                                                              [32m[K;[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.h:14:64:[m[K [01;31m[Kerror: [m[K‘[01m[KConstPtr[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+   14 |     void retrievePose(const geometry_msgs::PoseWithCovariance::[01;31m[KConstPtr[m[K &msg);
+      |                                                                [01;31m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:7:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kgeometry_msgs[m[K’ does not name a type
+    7 | void RobotPose::retrievePose(const [01;31m[Kgeometry_msgs[m[K::PoseWithCovariance::ConstPtr &msg) {
+      |                                    [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:7:69:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+    7 | void RobotPose::retrievePose(const geometry_msgs::PoseWithCovariance[01;31m[K::[m[KConstPtr &msg) {
+      |                                                                     [01;31m[K^~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:7:69:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+    7 | void RobotPose::retrievePose[34m[K([m[Kconst geometry_msgs::PoseWithCovariance[01;31m[K:[m[K[32m[K:[m[KConstPtr &msg) {
+      |                             [34m[K~[m[K                                       [01;31m[K^[m[K[32m[K~[m[K
+      |                                                                     [32m[K)[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:7:69:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K::[m[K’ token
+    7 | void RobotPose::retrievePose(const geometry_msgs::PoseWithCovariance[01;31m[K::[m[KConstPtr &msg) {
+      |                                                                     [01;31m[K^~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:[m[K In member function ‘[01m[Kvoid RobotPose::getInitialPose()[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:12:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   12 |     [01;31m[Kros[m[K::NodeHandle n;
+      |     [01;31m[K^~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:14:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   14 |     [01;31m[Kros[m[K::Subscriber initPoseRetriever = n.subscribe("initialpose", 1000, &RobotPose::retrievePose, this);
+      |     [01;31m[K^~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:76: CMakeFiles/planner_internal.dir/src/RobotPose.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

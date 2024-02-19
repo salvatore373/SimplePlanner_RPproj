@@ -1,0 +1,18 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:16:18:[m[K [01;31m[Kerror: [m[K‘[01m[KV_string[m[K’ is not a member of ‘[01m[Kros::master[m[K’; did you mean ‘[01m[Kros::V_string[m[K’?
+   16 |     ros::master::[01;31m[KV_string[m[K topics;
+      |                  [01;31m[K^~~~~~~~[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/forwards.h:45[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/common.h:37[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:43[m[K,
+                 from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:14[m[K,
+                 from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:2[m[K:
+[01m[K/opt/ros/noetic/include/ros/datatypes.h:42:34:[m[K [01;36m[Knote: [m[K‘[01m[Kros::V_string[m[K’ declared here
+   42 | typedef std::vector<std::string> [01;36m[KV_string[m[K;
+      |                                  [01;36m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:17:28:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopics[m[K’ was not declared in this scope
+   17 |     ros::master::getTopics([01;31m[Ktopics[m[K);
+      |                            [01;31m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/simple_planner_node.dir/build.make:63: CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:508: CMakeFiles/simple_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

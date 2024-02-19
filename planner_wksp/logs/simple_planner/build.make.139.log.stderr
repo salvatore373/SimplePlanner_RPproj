@@ -1,0 +1,14 @@
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.h:12:24:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[KinitialPose[m[K’
+   12 |     RobotDisplayer[34m[K([m[KPose[01;31m[K [m[K[32m[KinitialPose[m[K);
+      |                   [34m[K~[m[K    [01;31m[K^[m[K[32m[K~~~~~~~~~~~[m[K
+      |                        [32m[K)[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.h:14:5:[m[K [01;31m[Kerror: [m[K‘[01m[KPose[m[K’ does not name a type
+   14 |     [01;31m[KPose[m[K initialPose;
+      |     [01;31m[K^~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:8:31:[m[K [01;31m[Kerror: [m[Kexpected constructor, destructor, or type conversion before ‘[01m[K([m[K’ token
+    8 | RobotDisplayer::RobotDisplayer[01;31m[K([m[KPose initialPose) {
+      |                               [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:89: CMakeFiles/planner_internal.dir/src/RobotDisplayer.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,10 @@
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.h:19:44:[m[K [01;31m[Kerror: [m[Kexpected primary-expression at end of input
+   19 |     geometry_msgs::Pose initialPose = std::[01;31m[Knullptr_t[m[K;
+      |                                            [01;31m[K^~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.h:20:41:[m[K [01;31m[Kerror: [m[Kexpected primary-expression at end of input
+   20 |     geometry_msgs::Pose goalPose = std::[01;31m[Knullptr_t[m[K;
+      |                                         [01;31m[K^~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:76: CMakeFiles/planner_internal.dir/src/RobotPoses.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

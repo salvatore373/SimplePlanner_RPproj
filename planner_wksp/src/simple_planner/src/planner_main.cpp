@@ -1,30 +1,74 @@
 #include "iostream"
 #include "ImageMap.h"
+#include "RobotPoses.h"
+#include "RvizHelper.h"
+#include "UniformCostSearch.h"
 
 #include "ros/ros.h"
-#include "nav_msgs/MapMetaData.h"
-#include "nav_msgs/OccupancyGrid.h"
+#include <ros/master.h>
+#include "geometry_msgs/PoseWithCovariance.h"
+#include "geometry_msgs/Pose.h"
 
-using namespace std;
+// #include "Eigen/Dense"
 
-void retrieveMapMetadata(const nav_msgs::MapMetaData::ConstPtr &msg) {
-    cout << "I heard: " << msg->width << endl;
-}
-void fillMap(const nav_msgs::OccupancyGrid::ConstPtr &msg) {
-    // cout << "I heard: " << msg->width << endl;
-}
+ImageMap map;
+
+/**
+* The operations to perform once both the initial and goal poses have been received
+*/
+void onPosesReceived(geometry_msgs::Pose initPose, geometry_msgs::Pose goalPose) {
+    // Display the robot on the map
+    RvizHelper::displayOnMap(initPose);
+
+    // Compute the path
+    UniformCostSearch search(map);
+    // compute distance map (distance of each pixel from closest obstacle) -> col and row deriv -> magnitude map
+    auto distanceMap = search.computeDistanceMap(search.map.grid);
+    auto magnitudeMap = search.computeMagnitudeDerivative(distanceMap);
+    auto rowMap = search.computeRowDerivative(distanceMap);
+    auto colMap = search.computeColumnDerivative(distanceMap);
+
+    std::cout << "Original map" << std::endl;
+    std::cout << map.grid << std::endl;
+
+    std::cout << "Row map" << std::endl;
+    std::cout << rowMap << std::endl;
+
+    std::cout << "Col map" << std::endl;
+    std::cout << colMap << std::endl;
+
+    std::cout << "Magnitude map" << std::endl;
+    std::cout << magnitudeMap << std::endl;
+
+    // TODo: complete
+    RvizHelper::displayPath();
+};
 
 int main(int argc, char **argv) {
     ros::init(argc, argv, "simple_planner");
 
-    ros::NodeHandle n;
-    ros::Subscriber map_metadata_sub = n.subscribe("map_metadata", 1000, retrieveMapMetadata);
-    ros::Subscriber map_data_sub = n.subscribe("map", 1000, fillMap);
+    // Display the active topics
+//    ros::master::V_TopicInfo topic_infos;
+//    ros::master::getTopics(topic_infos);
+//    // Log the list of active topics with their details
+//    ROS_INFO("Active Topics:");
+//    for (const auto& topic : topic_infos) {
+//        ROS_INFO("Name: %s, Type: %s", topic.name.c_str(), topic.datatype.c_str());
+//    }
+
+    // Retrieve and initialize the map
+    map.retrieveMap();
+
+    // Retrieve the initial and goal poses
+    RobotPoses poses;
+    poses.setOnPoseReceivedCallback(onPosesReceived);
+    poses.retrieveInitialPose();
+    poses.retrieveGoalPose();
+
+    // DEBUG
+    RvizHelper::displayPath();
+
+    // Start the communications
     ros::spin();
-
-//    const char *path = "/Users/salvatore/Desktop/Università/Development/RobotProgramm"
-//                       "ing/ROS/docker_volume/planner_wksp/img.png";
-//    ImageMap map = ImageMap(path);
-
     return 0;
 }

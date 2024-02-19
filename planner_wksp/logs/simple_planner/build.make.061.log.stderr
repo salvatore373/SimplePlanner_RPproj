@@ -1,0 +1,21 @@
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:36:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+   36 | }
+      |  [01;31m[K^[m[K
+      |  [32m[K;[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:[m[K In member function ‘[01m[Kvoid ImageMap::fillMap(const ConstPtr&) const[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:23:30:[m[K [01;31m[Kerror: [m[Kpassing ‘[01m[Kconst MatrixXi[m[K’ {aka ‘[01m[Kconst Eigen::Matrix<int, -1, -1>[m[K’} as ‘[01m[Kthis[m[K’ argument discards qualifiers [[01;31m[K-fpermissive[m[K]
+   23 |     grid.resize(height, width[01;31m[K)[m[K;
+      |                              [01;31m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:457[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:12[m[K,
+                 from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:5[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:279:30:[m[K [01;36m[Knote: [m[K  in call to ‘[01m[Kvoid Eigen::PlainObjectBase<Derived>::resize(Eigen::Index, Eigen::Index) [with Derived = Eigen::Matrix<int, -1, -1>; Eigen::Index = long int][m[K’
+  279 |     EIGEN_STRONG_INLINE void [01;36m[Kresize[m[K(Index rows, Index cols)
+      |                              [01;36m[K^~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:26:24:[m[K [01;31m[Kerror: [m[Kassignment of read-only location ‘[01m[K((const Eigen::DenseCoeffsBase<Eigen::Matrix<int, -1, -1>, 0>*)(&((const ImageMap*)this)->ImageMap::grid))->Eigen::DenseCoeffsBase<Eigen::Matrix<int, -1, -1>, 0>::operator()(((Eigen::Index)i), ((Eigen::Index)j))[m[K’
+   26 |             grid(i, j) = msg->data[i*width + j];
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:63: CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

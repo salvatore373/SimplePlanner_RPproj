@@ -1,0 +1,47 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:[m[K In function ‘[01m[Kvoid retrieveMapMetadata(const ConstPtr&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:11:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kwidth[m[K’ was not declared in this scope; did you mean ‘[01m[Kwcwidth[m[K’?
+   11 |     [01;31m[Kwidth[m[K = msg->width;
+      |     [01;31m[K^~~~~[m[K
+      |     [32m[Kwcwidth[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:12:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kheight[m[K’ was not declared in this scope
+   12 |     [01;31m[Kheight[m[K = msg->height;
+      |     [01;31m[K^~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:13:5:[m[K [01;31m[Kerror: [m[K‘[01m[Knum_rows[m[K’ was not declared in this scope
+   13 |     [01;31m[Knum_rows[m[K = height;
+      |     [01;31m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:14:5:[m[K [01;31m[Kerror: [m[K‘[01m[Knum_cols[m[K’ was not declared in this scope
+   14 |     [01;31m[Knum_cols[m[K = width;
+      |     [01;31m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:15:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kresolution[m[K’ was not declared in this scope
+   15 |     [01;31m[Kresolution[m[K = msg->resolution;
+      |     [01;31m[K^~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/boost/assert.hpp:58[m[K,
+                 from [01m[K/usr/include/boost/range/size.hpp:23[m[K,
+                 from [01m[K/usr/include/boost/range/functions.hpp:20[m[K,
+                 from [01m[K/usr/include/boost/range/iterator_range_core.hpp:38[m[K,
+                 from [01m[K/usr/include/boost/lexical_cast.hpp:30[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/transport_hints.h:34[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/subscribe_options.h:33[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/node_handle.h:42[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:45[m[K,
+                 from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:14[m[K,
+                 from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:[m[K In function ‘[01m[Kvoid fillMap(const ConstPtr&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:20:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kwidth[m[K’ was not declared in this scope; did you mean ‘[01m[Kwcwidth[m[K’?
+   20 |     assert([01;31m[Kwidth[m[K > 0 && height > 0);
+      |            [01;31m[K^~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:20:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kheight[m[K’ was not declared in this scope
+   20 |     assert(width > 0 && [01;31m[Kheight[m[K > 0);
+      |                         [01;31m[K^~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:23:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kgrid[m[K’ was not declared in this scope
+   23 |     [01;31m[Kgrid[m[K.resize(height, width);
+      |     [01;31m[K^~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:24:25:[m[K [01;31m[Kerror: [m[K‘[01m[Knum_rows[m[K’ was not declared in this scope
+   24 |     for (int i = 0; i < [01;31m[Knum_rows[m[K; i++) {
+      |                         [01;31m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:25:28:[m[K [01;31m[Kerror: [m[K‘[01m[Knum_cols[m[K’ was not declared in this scope
+   25 |         for(int j = 0; j < [01;31m[Knum_cols[m[K; j++) {
+      |                            [01;31m[K^~~~~~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:63: CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

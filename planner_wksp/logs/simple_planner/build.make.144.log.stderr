@@ -1,0 +1,27 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:18:30:[m[K [01;35m[Kwarning: [m[Kcharacter constant too long for its type
+   18 |     marker.header.frame_id = [01;35m[K'base_link'[m[K;
+      |                              [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:19:30:[m[K [01;35m[Kwarning: [m[Kmulti-character character constant [[01;35m[K-Wmultichar[m[K]
+   19 |     marker.header.frame_id = [01;35m[K'map'[m[K;
+      |                              [01;35m[K^~~~~[m[K
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.h:19:10:[m[K [01;31m[Kerror: [m[Kextra qualification ‘[01m[KRobotDisplayer::[m[K’ on member ‘[01m[KdisplayOnMap[m[K’ [[01;31m[K-fpermissive[m[K]
+   19 |     void [01;31m[KRobotDisplayer[m[K::displayOnMap();
+      |          [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:[m[K In member function ‘[01m[Kvoid RobotDisplayer::displayOnMap()[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:14:33:[m[K [01;31m[Kerror: [m[K‘[01m[Knh[m[K’ was not declared in this scope
+   14 |     ros::Publisher marker_pub = [01;31m[Knh[m[K.advertise<visualization_msgs::Marker>("visualization_marker", 10);
+      |                                 [01;31m[K^~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:14:72:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   14 |     ros::Publisher marker_pub = nh.advertise<visualization_msgs::Marker[01;31m[K>[m[K("visualization_marker", 10);
+      |                                                                        [01;31m[K^[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:18:30:[m[K [01;35m[Kwarning: [m[Kunsigned conversion from ‘[01m[Kint[m[K’ to ‘[01m[Kchar[m[K’ changes value from ‘[01m[K1818848875[m[K’ to ‘[01m[K'k'[m[K’ [[01;35m[K-Woverflow[m[K]
+   18 |     marker.header.frame_id = [01;35m[K'base_link'[m[K;
+      |                              [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:19:30:[m[K [01;35m[Kwarning: [m[Kunsigned conversion from ‘[01m[Kint[m[K’ to ‘[01m[Kchar[m[K’ changes value from ‘[01m[K7168368[m[K’ to ‘[01m[K'p'[m[K’ [[01;35m[K-Woverflow[m[K]
+   19 |     marker.header.frame_id = [01;35m[K'map'[m[K;
+      |                              [01;35m[K^~~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:89: CMakeFiles/planner_internal.dir/src/RobotDisplayer.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

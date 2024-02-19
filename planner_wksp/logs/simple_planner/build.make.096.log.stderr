@@ -1,0 +1,11 @@
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:32:10:[m[K [01;31m[Kerror: [m[Kextra qualification ‘[01m[KImageMap::[m[K’ on member ‘[01m[KsendMapToRviz[m[K’ [[01;31m[K-fpermissive[m[K]
+   32 |     void [01;31m[KImageMap[m[K::sendMapToRviz() const;
+      |          [01;31m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:[m[K In constructor ‘[01m[KImageMap::ImageMap()[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:56:11:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[Kconst char [3][m[K’ to binary ‘[01m[Koperator<<[m[K’
+   56 |     [01;31m[Kcount << "r1"[m[K << endl;
+      |     [01;31m[K~~~~~~^~~~~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:63: CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

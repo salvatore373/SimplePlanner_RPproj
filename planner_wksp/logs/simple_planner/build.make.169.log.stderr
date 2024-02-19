@@ -1,0 +1,13 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:7:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid RobotDisplayer::displayOnMap(geometry_msgs::Pose)[m[K’
+    7 | void [01;31m[KRobotDisplayer[m[K::displayOnMap(geometry_msgs::Pose initialPose) {
+      |      [01;31m[K^~~~~~~~~~~~~~[m[K
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.h:16:17:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kstatic void RobotDisplayer::displayOnMap()[m[K’
+   16 |     static void [01;36m[KdisplayOnMap[m[K();
+      |                 [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotDisplayer.h:13:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass RobotDisplayer[m[K’ defined here
+   13 | class [01;36m[KRobotDisplayer[m[K {
+      |       [01;36m[K^~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:89: CMakeFiles/planner_internal.dir/src/RobotDisplayer.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

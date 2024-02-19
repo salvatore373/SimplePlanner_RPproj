@@ -2,10 +2,15 @@
   <!-- ****** To use by roslaunch ./src/simple_planner/maps/map_launcher.launch ****** -->
 
   <!-- Map File -->
-  <arg name="map_file" default="$(find simple_planner)/maps/1707060478160.yaml"/>
+<!--   <arg name="map_file" default="$(find simple_planner)/maps/1707060478160.yaml"/> -->
+  <arg name="map_file" default="$(find simple_planner)/maps/cappero_laser_odom_diag_obstacle_2020-05-06-16-26-03.world"/>
 
   <!-- Map Server -->
   <!-- Publish: /map, /map_metadata -->
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- Add a static transform -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_map"
+   args="0.1 0 0.455 0 0 0 base_link map 100"/>
 
 </launch>

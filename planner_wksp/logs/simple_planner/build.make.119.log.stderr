@@ -1,0 +1,14 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:21:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kboost::algorithm[m[K’ has not been declared
+   21 |     boost::[01;31m[Kalgorithm[m[K::split( lv_elems, topic_infos[0].name, boost::algorithm::is_any_of( lc_delim ) );
+      |            [01;31m[K^~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:21:68:[m[K [01;31m[Kerror: [m[K‘[01m[Kboost::algorithm[m[K’ has not been declared
+   21 |     boost::algorithm::split( lv_elems, topic_infos[0].name, boost::[01;31m[Kalgorithm[m[K::is_any_of( lc_delim ) );
+      |                                                                    [01;31m[K^~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:24:30:[m[K [01;31m[Kerror: [m[K‘[01m[Ktopics[m[K’ was not declared in this scope; did you mean ‘[01m[Ktopic[m[K’?
+   24 |     for (const auto& topic : [01;31m[Ktopics[m[K) {
+      |                              [01;31m[K^~~~~~[m[K
+      |                              [32m[Ktopic[m[K
+make[2]: *** [CMakeFiles/simple_planner_node.dir/build.make:63: CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:508: CMakeFiles/simple_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

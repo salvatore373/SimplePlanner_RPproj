@@ -4,9 +4,14 @@
 CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o
  /opt/ros/noetic/include/geometry_msgs/Point.h
  /opt/ros/noetic/include/geometry_msgs/Pose.h
+ /opt/ros/noetic/include/geometry_msgs/PoseStamped.h
+ /opt/ros/noetic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/noetic/include/geometry_msgs/PoseWithCovarianceStamped.h
  /opt/ros/noetic/include/geometry_msgs/Quaternion.h
+ /opt/ros/noetic/include/geometry_msgs/Vector3.h
  /opt/ros/noetic/include/nav_msgs/MapMetaData.h
  /opt/ros/noetic/include/nav_msgs/OccupancyGrid.h
+ /opt/ros/noetic/include/nav_msgs/Path.h
  /opt/ros/noetic/include/ros/advertise_options.h
  /opt/ros/noetic/include/ros/advertise_service_options.h
  /opt/ros/noetic/include/ros/assert.h
@@ -63,10 +68,15 @@ CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o
  /opt/ros/noetic/include/ros/wall_timer.h
  /opt/ros/noetic/include/ros/wall_timer_options.h
  /opt/ros/noetic/include/rosconsole/macros_generated.h
+ /opt/ros/noetic/include/std_msgs/ColorRGBA.h
  /opt/ros/noetic/include/std_msgs/Header.h
+ /opt/ros/noetic/include/visualization_msgs/Marker.h
  /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
  /rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h
+ /rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.h
+ /rob_prog/planner_wksp/src/simple_planner/src/RvizHelper.h
+ /rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h
  /rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core

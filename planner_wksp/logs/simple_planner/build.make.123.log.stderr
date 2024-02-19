@@ -1,0 +1,7 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:[m[K In member function ‘[01m[Kvoid RobotPose::getInitialPose()[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:23:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmap_metadata_sub[m[K’ was not declared in this scope
+   23 |     [01;31m[Kmap_metadata_sub[m[K = n.subscribe("map_metadata", 1000, &RobotPose::retrieveMapMetadata, this);
+      |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:76: CMakeFiles/planner_internal.dir/src/RobotPose.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

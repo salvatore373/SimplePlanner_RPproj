@@ -1,0 +1,13 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:17:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid RobotPose::retrievePose(const ConstPtr&)[m[K’
+   17 | void [01;31m[KRobotPose[m[K::retrievePose(const geometry_msgs::PoseStamped::ConstPtr &msg) {
+      |      [01;31m[K^~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:10:6:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kvoid RobotPose::retrievePose(const ConstPtr&)[m[K’
+   10 | void [01;36m[KRobotPose[m[K::retrievePose(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr &msg) {
+      |      [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPose.h:18:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass RobotPose[m[K’ defined here
+   18 | class [01;36m[KRobotPose[m[K {
+      |       [01;36m[K^~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:76: CMakeFiles/planner_internal.dir/src/RobotPose.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

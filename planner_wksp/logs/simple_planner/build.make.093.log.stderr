@@ -1,0 +1,11 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:[m[K In member function ‘[01m[Kvoid ImageMap::retrieveMapMetadata(const ConstPtr&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:32:11:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[Kconst char [22][m[K’ to binary ‘[01m[Koperator<<[m[K’
+   32 |     [01;31m[Kcount << "map metadata received"[m[K << endl;
+      |     [01;31m[K~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:[m[K In member function ‘[01m[Kvoid ImageMap::fillMap(const ConstPtr&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:49:11:[m[K [01;31m[Kerror: [m[Kinvalid operands of types ‘[01m[K<unresolved overloaded function type>[m[K’ and ‘[01m[Kconst char [13][m[K’ to binary ‘[01m[Koperator<<[m[K’
+   49 |     [01;31m[Kcount << "map received"[m[K << endl;
+      |     [01;31m[K~~~~~~^~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:63: CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

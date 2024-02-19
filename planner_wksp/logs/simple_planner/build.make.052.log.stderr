@@ -1,0 +1,26 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:9:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid ImageMap::retrieveMapMetadata(const ConstPtr&)[m[K’
+    9 | void [01;31m[KImageMap[m[K::retrieveMapMetadata(const nav_msgs::MapMetaData::ConstPtr &msg) {
+      |      [01;31m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:9:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid ImageMap::retrieveMapMetadata(const ConstPtr&)[m[K’
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:18:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass ImageMap[m[K’ defined here
+   18 | class [01;36m[KImageMap[m[K {
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:18:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid ImageMap::fillMap(const ConstPtr&)[m[K’
+   18 | void [01;31m[KImageMap[m[K::fillMap(const nav_msgs::OccupancyGrid::ConstPtr &msg) {
+      |      [01;31m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:18:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid ImageMap::fillMap(const ConstPtr&)[m[K’
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h:18:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass ImageMap[m[K’ defined here
+   18 | class [01;36m[KImageMap[m[K {
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:[m[K In constructor ‘[01m[KImageMap::ImageMap()[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:37:74:[m[K [01;31m[Kerror: [m[K‘[01m[KretrieveMapMetadata[m[K’ was not declared in this scope
+   37 |     ros::Subscriber map_metadata_sub = n.subscribe("map_metadata", 1000, [01;31m[KretrieveMapMetadata[m[K);
+      |                                                                          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp:38:61:[m[K [01;31m[Kerror: [m[K‘[01m[KfillMap[m[K’ was not declared in this scope
+   38 |     ros::Subscriber map_data_sub = n.subscribe("map", 1000, [01;31m[KfillMap[m[K);
+      |                                                             [01;31m[K^~~~~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:63: CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

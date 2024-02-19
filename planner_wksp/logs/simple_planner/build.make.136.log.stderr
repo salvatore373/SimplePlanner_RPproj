@@ -1,0 +1,11 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:[m[K In member function ‘[01m[Kvoid RobotPoses::getInitialPose()[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:26:59:[m[K [01;31m[Kerror: [m[K‘[01m[KRobotPose[m[K’ has not been declared
+   26 |     initPoseRetriever = n.subscribe("initialpose", 1000, &[01;31m[KRobotPose[m[K::retrieveInitPose, this);
+      |                                                           [01;31m[K^~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:[m[K In member function ‘[01m[Kvoid RobotPoses::getGoalPose()[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:31:69:[m[K [01;31m[Kerror: [m[K‘[01m[KRobotPose[m[K’ has not been declared
+   31 |     goalPoseRetriever = n.subscribe("move_base_simple/goal", 1000, &[01;31m[KRobotPose[m[K::retrieveGoalPose, this);
+      |                                                                     [01;31m[K^~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:76: CMakeFiles/planner_internal.dir/src/RobotPoses.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

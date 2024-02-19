@@ -1,0 +1,10 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:30:20:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kros::Publisher marker_pub[m[K’
+   30 |     ros::Publisher [01;31m[Kmarker_pub[m[K = nh.advertise<visualization_msgs::Marker>("visualization_marker", 1000);
+      |                    [01;31m[K^~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:29:20:[m[K [01;36m[Knote: [m[K‘[01m[Kros::Publisher marker_pub[m[K’ previously declared here
+   29 |     ros::Publisher [01;36m[Kmarker_pub[m[K = nh.advertise<visualization_msgs::Marker>("visualization_marker", 1000);
+      |                    [01;36m[K^~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/simple_planner_node.dir/build.make:63: CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:508: CMakeFiles/simple_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
