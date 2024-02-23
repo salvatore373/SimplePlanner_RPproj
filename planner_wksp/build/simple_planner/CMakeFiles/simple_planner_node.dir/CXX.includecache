@@ -963,6 +963,8 @@ ImageMap.h
 /rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h
 Eigen/Dense
 /rob_prog/planner_wksp/src/simple_planner/src/Eigen/Dense
+queue
+/rob_prog/planner_wksp/src/simple_planner/src/queue
 
 /rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp
 iostream
@@ -983,6 +985,10 @@ geometry_msgs/PoseWithCovariance.h
 /rob_prog/planner_wksp/src/simple_planner/src/geometry_msgs/PoseWithCovariance.h
 geometry_msgs/Pose.h
 /rob_prog/planner_wksp/src/simple_planner/src/geometry_msgs/Pose.h
+Eigen/Dense
+/rob_prog/planner_wksp/src/simple_planner/src/Eigen/Dense
+fstream
+-
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

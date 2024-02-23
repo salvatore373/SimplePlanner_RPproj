@@ -9,9 +9,37 @@
 #include "geometry_msgs/PoseWithCovariance.h"
 #include "geometry_msgs/Pose.h"
 
-// #include "Eigen/Dense"
+// DEBUG
+#include "Eigen/Dense"
+#include <fstream>
 
 ImageMap map;
+
+void saveMatrixToFile(Eigen::MatrixXf map, const std::string& filename = "./output.csv") {
+    std::ofstream file(filename);
+
+    if (file.is_open()) {
+        // Iterate through the matrix and write each element to the file
+        for (int i = 0; i < map.rows(); ++i) {
+            for (int j = 0; j < map.cols(); ++j) {
+                file << map(i, j);
+
+                // Add a comma unless it's the last element in the row
+                if (j < map.cols() - 1) {
+                    file << ",";
+                }
+            }
+
+            // Start a new line after each row
+            file << "\n";
+        }
+
+        file.close();
+        std::cout << "Matrix saved to " << filename << std::endl;
+    } else {
+        std::cerr << "Unable to open file: " << filename << std::endl;
+    }
+}
 
 /**
 * The operations to perform once both the initial and goal poses have been received
@@ -20,25 +48,35 @@ void onPosesReceived(geometry_msgs::Pose initPose, geometry_msgs::Pose goalPose)
     // Display the robot on the map
     RvizHelper::displayOnMap(initPose);
 
+    std::cout << map.grid.rows() << "x" << map.grid.cols() << std::endl;
+
     // Compute the path
     UniformCostSearch search(map);
     // compute distance map (distance of each pixel from closest obstacle) -> col and row deriv -> magnitude map
-    auto distanceMap = search.computeDistanceMap(search.map.grid);
-    auto magnitudeMap = search.computeMagnitudeDerivative(distanceMap);
-    auto rowMap = search.computeRowDerivative(distanceMap);
-    auto colMap = search.computeColumnDerivative(distanceMap);
+    Eigen::MatrixXf distanceMap = search.computeDistanceMap(search.map.grid, 50);
+    Eigen::MatrixXf magnitudeMap = search.computeMagnitudeDerivative(distanceMap);
+    Eigen::MatrixXf rowMap = search.computeRowDerivative(distanceMap);
+    Eigen::MatrixXf colMap = search.computeColumnDerivative(distanceMap);
 
-    std::cout << "Original map" << std::endl;
-    std::cout << map.grid << std::endl;
+//    std::cout << "Original map" << std::endl;
+//    std::cout << map.grid << std::endl;
+//
+//    std::cout << "Row map" << std::endl;
+//    std::cout << rowMap << std::endl;
+//
+//    std::cout << "Col map" << std::endl;
+//    std::cout << colMap << std::endl;
+//
+//    std::cout << "Magnitude map" << std::endl;
+//    std::cout << magnitudeMap << std::endl;
+//
+//    std::cout << "here" << std::endl;
 
-    std::cout << "Row map" << std::endl;
-    std::cout << rowMap << std::endl;
-
-    std::cout << "Col map" << std::endl;
-    std::cout << colMap << std::endl;
-
-    std::cout << "Magnitude map" << std::endl;
-    std::cout << magnitudeMap << std::endl;
+    saveMatrixToFile(search.map.grid.cast<float>(), "./original_map.csv");
+    saveMatrixToFile(distanceMap, "./distance_map.csv");
+    saveMatrixToFile(rowMap, "./row_map.csv");
+    saveMatrixToFile(colMap, "./col_map.csv");
+    saveMatrixToFile(magnitudeMap, "./magnitude_map.csv");
 
     // TODo: complete
     RvizHelper::displayPath();

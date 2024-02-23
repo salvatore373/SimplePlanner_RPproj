@@ -1,0 +1,24 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:[m[K In function ‘[01m[KEigen::MatrixXf computeDistanceMap(Eigen::MatrixXi, float)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:75:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kqueue[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   75 |     std::[01;31m[Kqueue[m[K<DistanceMapCell *> frontier;
+      |          [01;31m[K^~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:6:1:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::queue[m[K’ is defined in header ‘[01m[K<queue>[m[K’; did you forget to ‘[01m[K#include <queue>[m[K’?
+    5 | #include "UniformCostSearch.h"
+  +++ |+[32m[K#include <queue>[m[K
+    6 | 
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:75:32:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K*[m[K’ token
+   75 |     std::queue<DistanceMapCell [01;31m[K*[m[K> frontier;
+      |                                [01;31m[K^[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:75:33:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   75 |     std::queue<DistanceMapCell *[01;31m[K>[m[K frontier;
+      |                                 [01;31m[K^[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:75:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kfrontier[m[K’ was not declared in this scope
+   75 |     std::queue<DistanceMapCell *> [01;31m[Kfrontier[m[K;
+      |                                   [01;31m[K^~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:82:30:[m[K [01;31m[Kerror: [m[K‘[01m[KOBSTACLE[m[K’ was not declared in this scope; did you mean ‘[01m[KESTALE[m[K’?
+   82 |             if (map(i, j) == [01;31m[KOBSTACLE[m[K) {
+      |                              [01;31m[K^~~~~~~~[m[K
+      |                              [32m[KESTALE[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:102: CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

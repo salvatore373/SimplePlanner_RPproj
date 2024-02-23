@@ -1,0 +1,7 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:14:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/Image: No such file or directory
+   14 | #include [01;31m[K"sensor_msgs/Image"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/simple_planner_node.dir/build.make:63: CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:508: CMakeFiles/simple_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

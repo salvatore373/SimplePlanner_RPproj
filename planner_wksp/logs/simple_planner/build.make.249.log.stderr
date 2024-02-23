@@ -1,0 +1,58 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:7:1:[m[K [01;31m[Kerror: [m[Kextra qualification ‘[01m[KUniformCostSearch::[m[K’ on member ‘[01m[KUniformCostSearch[m[K’ [[01;31m[K-fpermissive[m[K]
+    7 | [01;31m[KUniformCostSearch[m[K::UniformCostSearch(ImageMap map) {
+      | [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:7:1:[m[K [01;31m[Kerror: [m[K‘[01m[KUniformCostSearch::UniformCostSearch(ImageMap)[m[K’ cannot be overloaded with ‘[01m[KUniformCostSearch::UniformCostSearch(ImageMap)[m[K’
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h:25:5:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[KUniformCostSearch::UniformCostSearch(ImageMap)[m[K’
+   25 |     [01;36m[KUniformCostSearch[m[K(ImageMap map);
+      |     [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:11:17:[m[K [01;31m[Kerror: [m[Kextra qualification ‘[01m[KUniformCostSearch::[m[K’ on member ‘[01m[KcomputeRowDerivative[m[K’ [[01;31m[K-fpermissive[m[K]
+   11 | Eigen::MatrixXf [01;31m[KUniformCostSearch[m[K::computeRowDerivative(Eigen::MatrixXi map) const {
+      |                 [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:11:17:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::MatrixXf UniformCostSearch::computeRowDerivative(Eigen::MatrixXi) const[m[K’ cannot be overloaded with ‘[01m[KEigen::MatrixXf UniformCostSearch::computeRowDerivative(Eigen::MatrixXi) const[m[K’
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h:34:21:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[KEigen::MatrixXf UniformCostSearch::computeRowDerivative(Eigen::MatrixXi) const[m[K’
+   34 |     Eigen::MatrixXf [01;36m[KcomputeRowDerivative[m[K(Eigen::MatrixXi map) const;
+      |                     [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:26:17:[m[K [01;31m[Kerror: [m[Kextra qualification ‘[01m[KUniformCostSearch::[m[K’ on member ‘[01m[KcomputeColumnDerivative[m[K’ [[01;31m[K-fpermissive[m[K]
+   26 | Eigen::MatrixXf [01;31m[KUniformCostSearch[m[K::computeColumnDerivative(Eigen::MatrixXi map) const {
+      |                 [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:26:17:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::MatrixXf UniformCostSearch::computeColumnDerivative(Eigen::MatrixXi) const[m[K’ cannot be overloaded with ‘[01m[KEigen::MatrixXf UniformCostSearch::computeColumnDerivative(Eigen::MatrixXi) const[m[K’
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h:36:21:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[KEigen::MatrixXf UniformCostSearch::computeColumnDerivative(Eigen::MatrixXi) const[m[K’
+   36 |     Eigen::MatrixXf [01;36m[KcomputeColumnDerivative[m[K(Eigen::MatrixXi map) const;
+      |                     [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:41:17:[m[K [01;31m[Kerror: [m[Kextra qualification ‘[01m[KUniformCostSearch::[m[K’ on member ‘[01m[KcomputeMagnitudeDerivative[m[K’ [[01;31m[K-fpermissive[m[K]
+   41 | Eigen::MatrixXf [01;31m[KUniformCostSearch[m[K::computeMagnitudeDerivative(Eigen::MatrixXi map) const {
+      |                 [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:41:17:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::MatrixXf UniformCostSearch::computeMagnitudeDerivative(Eigen::MatrixXi) const[m[K’ cannot be overloaded with ‘[01m[KEigen::MatrixXf UniformCostSearch::computeMagnitudeDerivative(Eigen::MatrixXi) const[m[K’
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h:32:21:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[KEigen::MatrixXf UniformCostSearch::computeMagnitudeDerivative(Eigen::MatrixXi) const[m[K’
+   32 |     Eigen::MatrixXf [01;36m[KcomputeMagnitudeDerivative[m[K(Eigen::MatrixXi map) const;
+      |                     [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:69:17:[m[K [01;31m[Kerror: [m[Kextra qualification ‘[01m[KUniformCostSearch::[m[K’ on member ‘[01m[KcomputeDistanceMap[m[K’ [[01;31m[K-fpermissive[m[K]
+   69 | Eigen::MatrixXf [01;31m[KUniformCostSearch[m[K::computeDistanceMap(Eigen::MatrixXi map, float maximumDistance) {
+      |                 [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:69:17:[m[K [01;31m[Kerror: [m[K‘[01m[KEigen::MatrixXf UniformCostSearch::computeDistanceMap(Eigen::MatrixXi, float)[m[K’ cannot be overloaded with ‘[01m[KEigen::MatrixXf UniformCostSearch::computeDistanceMap(Eigen::MatrixXi, float)[m[K’
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h:39:21:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[KEigen::MatrixXf UniformCostSearch::computeDistanceMap(Eigen::MatrixXi, float)[m[K’
+   39 |     Eigen::MatrixXf [01;36m[KcomputeDistanceMap[m[K(Eigen::MatrixXi map, float maximumDistance) {
+      |                     [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:146:1:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  146 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:5[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h:23:25:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   23 | class UniformCostSearch [01;36m[K{[m[K
+      |                         [01;36m[K^[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h:[m[K In member function ‘[01m[KEigen::MatrixXf UniformCostSearch::computeDistanceMap(Eigen::MatrixXi, float)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h:41:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+   41 | [01;35m[K}[m[K;
+      | [01;35m[K^[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:[m[K At global scope:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp:146:1:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+  146 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:102: CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

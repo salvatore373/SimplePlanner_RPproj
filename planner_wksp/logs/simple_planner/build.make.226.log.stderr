@@ -1,0 +1,8 @@
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:15[m[K:
+[01m[K/opt/ros/noetic/include/cv_bridge/cv_bridge.h:43:10:[m[K [01;31m[Kfatal error: [m[Kopencv2/core/core.hpp: No such file or directory
+   43 | #include [01;31m[K<opencv2/core/core.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/simple_planner_node.dir/build.make:63: CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:508: CMakeFiles/simple_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

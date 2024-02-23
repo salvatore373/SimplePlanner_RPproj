@@ -7,7 +7,18 @@
 
 #include "ImageMap.h"
 #include "Eigen/Dense"
+#include "queue"
 
+// The cell used to compute the distance map
+struct DistanceMapCell {
+    // The parent of this cell
+    DistanceMapCell *parent = nullptr;
+    // The distance of this cell from its parent
+    float distanceFromParent = -1;
+    // The coordinates of this cell
+    int x = -1;
+    int y = -1;
+};
 
 class UniformCostSearch {
 public:
@@ -17,10 +28,15 @@ public:
     static const int FREE_CELL = 0;
 
     ImageMap map;
-    Eigen::MatrixXi computeMagnitudeDerivative(Eigen::MatrixXi map) const;
-    Eigen::MatrixXi computeRowDerivative(Eigen::MatrixXi map) const;
-    Eigen::MatrixXi computeColumnDerivative(Eigen::MatrixXi map) const;
-    Eigen::MatrixXi computeDistanceMap(Eigen::MatrixXi map) const;
+
+    Eigen::MatrixXf computeMagnitudeDerivative(Eigen::MatrixXf map) const;
+
+    Eigen::MatrixXf computeRowDerivative(Eigen::MatrixXf map) const;
+
+    Eigen::MatrixXf computeColumnDerivative(Eigen::MatrixXf map) const;
+
+    // Eigen::MatrixXf computeDistanceMap(Eigen::MatrixXi map) const;
+    Eigen::MatrixXf computeDistanceMap(Eigen::MatrixXi map, float maximumDistance);
 // private:
 };
 
