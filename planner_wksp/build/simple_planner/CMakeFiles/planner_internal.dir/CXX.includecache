@@ -805,6 +805,10 @@ Eigen/Dense
 /rob_prog/planner_wksp/src/simple_planner/src/Eigen/Dense
 queue
 /rob_prog/planner_wksp/src/simple_planner/src/queue
+list
+-
+set
+-
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

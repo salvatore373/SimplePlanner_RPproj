@@ -71,8 +71,8 @@ Eigen::MatrixXf UniformCostSearch::computeDistanceMap(Eigen::MatrixXi map, float
     int num_cols = map.cols();
 
     // Add all the obstacles to the frontier queue and set the parent of the obstacle cells
-    Eigen::Matrix<DistanceMapCell, Eigen::Dynamic, Eigen::Dynamic> distanceCells(num_rows, num_cols);
-    std::queue<DistanceMapCell *> frontier;
+    Eigen::Matrix <DistanceMapCell, Eigen::Dynamic, Eigen::Dynamic> distanceCells(num_rows, num_cols);
+    std::queue < DistanceMapCell * > frontier;
     for (int i = 0; i < num_rows; ++i) {
         for (int j = 0; j < num_cols; ++j) {
             DistanceMapCell *dCell = &distanceCells(i, j);
@@ -111,7 +111,7 @@ Eigen::MatrixXf UniformCostSearch::computeDistanceMap(Eigen::MatrixXi map, float
                 Eigen::Vector2f neighborCoords(u, v);
                 float dist = (neighborCoords - elemParent).norm();
 
-                if(dist > maximumDistance) {
+                if (dist > maximumDistance) {
                     continue;
                 }
 
@@ -143,4 +143,122 @@ Eigen::MatrixXf UniformCostSearch::computeDistanceMap(Eigen::MatrixXi map, float
         }
     }
     return res;
+}
+
+
+std::list <Eigen::Vector2i> UniformCostSearch::getPathFromNode(SearchNode *node) {
+    // Create the vector that will contain the path points
+    std::list <Eigen::Vector2i> path;
+
+    SearchNode *currNode = node;
+    while (currNode != nullptr) {
+        path.emplace_front(currNode->x, currNode->y);
+        currNode = currNode->parentNode;
+    }
+
+    return path;
+}
+
+SearchNode *UniformCostSearch::addNodeToClosedList(std::list <SearchNode> *closedList, SearchNode &toAdd) {
+    for (auto itr = closedList->begin(); itr != closedList->end(); itr++) {
+        SearchNode n = *itr;
+        if (n.x == toAdd.x && n.y == toAdd.y) {
+            // Only change the parent node and the cost value if this is the new version of the same node already
+            // in the closed list
+            itr->gCost = toAdd.gCost;
+            itr->hCost = toAdd.hCost;
+            itr->parentNode = toAdd.parentNode;
+            return &(*itr);
+        }
+    }
+    closedList->push_back(toAdd);
+    return &closedList->back();
+
+
+}
+
+std::multiset<SearchNode, SearchNodesComparator>::iterator
+UniformCostSearch::findElementByCoordsInSet(int x, int y, std::multiset <SearchNode, SearchNodesComparator> *set) {
+    for (auto itr = set->begin(); itr != set->end(); itr++) {
+        SearchNode n = *itr;
+        if (n.x == x && n.y == y) return itr;
+    }
+
+    // No element with the given coordinates was found in the given set
+    return set->end();
+}
+
+/**
+ * Computes the best path from the initial position to the goal, according to the A* algorithm.
+ * In the following implementation of the A* algorithm the values of the cells of the Voronoi diagram are used as
+ * h-cost, while the g-cost is the number of steps from the initial position to the current node.
+ * @param initialPosition The initial cell in the map.
+ * @param goalPosition The goal cell in the map.
+ * @return The path from the initial to the goal position, which consist in a vector of cells positions.
+ */
+std::list <Eigen::Vector2i>
+UniformCostSearch::performUniformCostSearch(const Eigen::Vector2i &initialPosition, const Eigen::Vector2i &goalPosition) {
+    // Compute the Voronoi diagram
+    Eigen::MatrixXf distanceMap = computeDistanceMap(map.grid, 50);
+    Eigen::MatrixXf voronoiMap = computeMagnitudeDerivative(distanceMap);
+    int num_rows = voronoiMap.rows();
+    int num_cols = voronoiMap.cols();
+
+    // Create the vector that will contain the explored
+    std::list <SearchNode> closedList;
+    // Create the map of visited positions
+    Eigen::Matrix<bool, Eigen::Dynamic, Eigen::Dynamic> visited;
+    visited = Eigen::Matrix<bool, Eigen::Dynamic, Eigen::Dynamic>::Constant(num_rows, num_cols, false);
+    // Create a min priority queue (min heap)
+    // std::priority_queue<SearchNode, std::vector<SearchNode>, SearchNodesComparator> pQueue;
+    std::multiset <SearchNode, SearchNodesComparator> pQueue;
+
+    // Add initial position to priority queue (with gCost 0)
+    pQueue.emplace(initialPosition.x(), initialPosition.y(),
+                   0, SearchNode::getHCostFromVoronoiMap(&voronoiMap, initialPosition.x(), initialPosition.y()));
+
+    while (!pQueue.empty()) {
+        // Get the top of the queue (the node with minimum gCost)
+        SearchNode node = *pQueue.begin();
+        pQueue.erase(pQueue.begin());
+        SearchNode *nodePtr = addNodeToClosedList(&closedList, node);
+        Eigen::Vector2i currPos(node.x, node.y);
+
+        // Mark this node as visited
+        visited(node.x, node.y) = true;
+
+        // Check whether the current node is the goal
+        if (node.x == goalPosition.x() && node.y == goalPosition.y()) {
+            return getPathFromNode(nodePtr);
+        }
+
+        int minBoundRow = std::max(currPos.x() - 1, 0);
+        int maxBoundRow = std::min(num_rows, currPos.x() + 1 + 1);
+        int minBoundCol = std::max(currPos.y() - 1, 0);
+        int maxBoundCol = std::min(num_cols, currPos.y() + 1 + 1);
+        for (int u = minBoundRow; u < maxBoundRow; ++u) {
+            for (int v = minBoundCol; v < maxBoundCol; ++v) {
+                if (u == currPos.x() && v == currPos.y()) continue;
+
+                float neighborGCost = node.gCost + 1;
+                float neighborHCost = SearchNode::getHCostFromVoronoiMap(&voronoiMap, u, v);
+                auto oldNode = findElementByCoordsInSet(u, v, &pQueue);
+                if (!visited(u, v) && oldNode == pQueue.end()) {
+                    // This neighbor has not been visited nor added to the queue yet, then add it to the queue
+                    pQueue.emplace(u, v,
+                                   neighborGCost, neighborHCost,
+                                   nodePtr);
+                } else if (oldNode != pQueue.end() && oldNode->getOverallCost() > neighborGCost + neighborHCost) {
+                    // This node has already benn explored, but we found a shorter path, then we make a replacement
+                    pQueue.erase(oldNode);
+                    pQueue.emplace(u, v,
+                                   neighborGCost, neighborHCost,
+                                   nodePtr);
+                }
+            }
+        }
+    }
+
+    // Unable to find the path to the goal
+    throw std::runtime_error("Unable to find a path from the initial provided position to the goal.");
 }

@@ -965,6 +965,10 @@ Eigen/Dense
 /rob_prog/planner_wksp/src/simple_planner/src/Eigen/Dense
 queue
 /rob_prog/planner_wksp/src/simple_planner/src/queue
+list
+-
+set
+-
 
 /rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp
 iostream

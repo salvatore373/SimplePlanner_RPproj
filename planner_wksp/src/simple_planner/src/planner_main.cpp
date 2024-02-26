@@ -48,35 +48,24 @@ void onPosesReceived(geometry_msgs::Pose initPose, geometry_msgs::Pose goalPose)
     // Display the robot on the map
     RvizHelper::displayOnMap(initPose);
 
-    std::cout << map.grid.rows() << "x" << map.grid.cols() << std::endl;
-
     // Compute the path
     UniformCostSearch search(map);
     // compute distance map (distance of each pixel from closest obstacle) -> col and row deriv -> magnitude map
-    Eigen::MatrixXf distanceMap = search.computeDistanceMap(search.map.grid, 50);
-    Eigen::MatrixXf magnitudeMap = search.computeMagnitudeDerivative(distanceMap);
-    Eigen::MatrixXf rowMap = search.computeRowDerivative(distanceMap);
-    Eigen::MatrixXf colMap = search.computeColumnDerivative(distanceMap);
+//    Eigen::MatrixXf distanceMap = search.computeDistanceMap(search.map.grid, 50);
+//    Eigen::MatrixXf magnitudeMap = search.computeMagnitudeDerivative(distanceMap);
+//    Eigen::MatrixXf rowMap = search.computeRowDerivative(distanceMap);
+//    Eigen::MatrixXf colMap = search.computeColumnDerivative(distanceMap);
+//    saveMatrixToFile(search.map.grid.cast<float>(), "./original_map.csv");
+//    saveMatrixToFile(distanceMap, "./distance_map.csv");
+//    saveMatrixToFile(rowMap, "./row_map.csv");
+//    saveMatrixToFile(colMap, "./col_map.csv");
+//    saveMatrixToFile(magnitudeMap, "./magnitude_map.csv");
 
-//    std::cout << "Original map" << std::endl;
-//    std::cout << map.grid << std::endl;
-//
-//    std::cout << "Row map" << std::endl;
-//    std::cout << rowMap << std::endl;
-//
-//    std::cout << "Col map" << std::endl;
-//    std::cout << colMap << std::endl;
-//
-//    std::cout << "Magnitude map" << std::endl;
-//    std::cout << magnitudeMap << std::endl;
-//
-//    std::cout << "here" << std::endl;
-
-    saveMatrixToFile(search.map.grid.cast<float>(), "./original_map.csv");
-    saveMatrixToFile(distanceMap, "./distance_map.csv");
-    saveMatrixToFile(rowMap, "./row_map.csv");
-    saveMatrixToFile(colMap, "./col_map.csv");
-    saveMatrixToFile(magnitudeMap, "./magnitude_map.csv");
+    std::list<Eigen::Vector2i> path = search.performUniformCostSearch(Eigen::Vector2i(1,1), Eigen::Vector2i(4,4));
+    for (auto e: path) {
+        std::cout << e.x() << "," << e.y() << " -> ";
+    }
+    std::cout << std::endl;
 
     // TODo: complete
     RvizHelper::displayPath();
