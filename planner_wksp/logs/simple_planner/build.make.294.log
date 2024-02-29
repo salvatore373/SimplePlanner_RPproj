@@ -1,5 +1,5 @@
 [35m[1mScanning dependencies of target planner_internal[0m
-[ 28%] [32mBuilding CXX object CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o[0m
 [ 28%] [32mBuilding CXX object CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o[0m
 [ 42%] [32m[1mLinking CXX shared library /rob_prog/planner_wksp/devel/.private/simple_planner/lib/libplanner_internal.so[0m
 [ 71%] Built target planner_internal

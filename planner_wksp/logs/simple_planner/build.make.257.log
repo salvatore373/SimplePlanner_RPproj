@@ -1,5 +1,0 @@
-[ 71%] Built target planner_internal
-[35m[1mScanning dependencies of target simple_planner_node[0m
-[ 85%] [32mBuilding CXX object CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /rob_prog/planner_wksp/devel/.private/simple_planner/lib/simple_planner/simple_planner_node[0m
-[100%] Built target simple_planner_node

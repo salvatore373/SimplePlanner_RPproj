@@ -15,7 +15,7 @@
 
 ImageMap map;
 
-void saveMatrixToFile(Eigen::MatrixXf map, const std::string& filename = "./output.csv") {
+void saveMatrixToFile(Eigen::MatrixXf map, const std::string &filename = "./output.csv") {
     std::ofstream file(filename);
 
     if (file.is_open()) {
@@ -61,7 +61,7 @@ void onPosesReceived(geometry_msgs::Pose initPose, geometry_msgs::Pose goalPose)
 //    saveMatrixToFile(colMap, "./col_map.csv");
 //    saveMatrixToFile(magnitudeMap, "./magnitude_map.csv");
 
-    std::list<Eigen::Vector2i> path = search.performUniformCostSearch(Eigen::Vector2i(1,1), Eigen::Vector2i(4,4));
+    std::list <Eigen::Vector2i> path = search.performUniformCostSearch(Eigen::Vector2i(1, 1), Eigen::Vector2i(4, 4));
     for (auto e: path) {
         std::cout << e.x() << "," << e.y() << " -> ";
     }

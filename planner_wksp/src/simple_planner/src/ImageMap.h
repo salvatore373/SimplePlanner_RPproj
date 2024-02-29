@@ -17,16 +17,35 @@
 
 class ImageMap {
 public:
-    unsigned int width;
-    unsigned int height;
-    unsigned int num_rows;
-    unsigned int num_cols;
+    int width;
+    int height;
+    int num_rows;
+    int num_cols;
 
     nav_msgs::MapMetaData mapMetaData;
 
     Eigen::MatrixXi grid;
 
     void retrieveMap();
+
+    /*
+     * Converts a vector of the world to the coordinate of the corresponding cell in the map.
+     */
+    inline Eigen::Vector2i convertWorldToMap(float x, float y) {
+        int gridY = (int) ((x - mapMetaData.origin.position.x) / mapMetaData.resolution);
+        int gridX = num_rows - 1 - ((int) ((y - mapMetaData.origin.position.y) / mapMetaData.resolution));
+        return Eigen::Vector2i(gridX, gridY);
+    }
+
+    /*
+     * Converts the coordinate a cell in the map to the corresponding vector in the world.
+     */
+    inline Eigen::Vector2f convertMapToWorld(int x, int y) {
+        float worldX = (float) (y * mapMetaData.resolution + mapMetaData.origin.position.y);
+        float worldY = (float) ((-x - 1 + num_rows) * mapMetaData.resolution + mapMetaData.origin.position.x);
+
+        return Eigen::Vector2f(worldX, worldY);
+    }
 
 private:
     ros::Subscriber map_metadata_sub;

@@ -38,12 +38,12 @@ void ImageMap::fillMap(const nav_msgs::OccupancyGrid::ConstPtr &msg) {
         for (int j = 0; j < num_cols; j++) {
             // Use this formula to get the map in grid as it is shown in the image
             grid(num_rows - i - 1, j) = msg->data[i * width + j];
+            // grid(i, j) = msg->data[i * width + j];
         }
     }
 
     // DEBUG
     cout << "map received" << endl;
-
     // Display the map
     // cout << grid << endl;
 }
