@@ -167,21 +167,11 @@ std::list <Eigen::Vector2i> PathFinding::getPathFromNode(SearchNode *node) {
     // Create the vector that will contain the path points
     std::list <Eigen::Vector2i> path;
 
-    float totCost = 0; // DEBUG
-
     SearchNode *currNode = node;
     while (currNode != nullptr) {
-        // DEBUG
-        if (currNode->hCost == std::numeric_limits<float>::infinity())
-            std::cout << "the path includes a cell that should have been avoided" << std::endl;
-        totCost += currNode->getOverallCost(); // DEBUG
-
         path.emplace_front(currNode->x, currNode->y);
         currNode = currNode->parentNode;
     }
-
-    std::cout << "the total cost is: " << totCost << std::endl; //DEBUG
-
 
     return path;
 }
@@ -225,7 +215,9 @@ PathFinding::findElementByCoordsInSet(int x, int y, std::multiset <SearchNode, S
  */
 std::list <Eigen::Vector2i>
 PathFinding::performPathFinding(const Eigen::Vector2i &initialPosition,
-                                            const Eigen::Vector2i &goalPosition) {
+                                const Eigen::Vector2i &goalPosition) {
+    std::cout << "Starting to compute the best path from the initial to the goal position..." << std::endl;
+
     // Compute the Voronoi diagram
     int num_rows = voronoiMap.rows();
     int num_cols = voronoiMap.cols();
@@ -255,6 +247,7 @@ PathFinding::performPathFinding(const Eigen::Vector2i &initialPosition,
 
         // Check whether the current node is the goal
         if (node.x == goalPosition.x() && node.y == goalPosition.y()) {
+            std::cout << "The path has been found" << std::endl;
             return getPathFromNode(nodePtr);
         }
 
@@ -265,7 +258,8 @@ PathFinding::performPathFinding(const Eigen::Vector2i &initialPosition,
         for (int u = minBoundRow; u < maxBoundRow; ++u) {
             for (int v = minBoundCol; v < maxBoundCol; ++v) {
                 if (u == currPos.x() && v == currPos.y()) continue;
-                if (u != currPos.x() && v != currPos.y()) continue; // DEBUG: do not allow movements along diagonal
+                // Do not allow movements along the diagonal
+                if (u != currPos.x() && v != currPos.y()) continue;
 
                 float neighborGCost = node.gCost + 1;
                 float neighborHCost = SearchNode::getHCostFromVoronoiMap(&voronoiMap, u, v);

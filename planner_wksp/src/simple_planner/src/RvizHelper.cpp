@@ -4,25 +4,45 @@
 
 #include "RvizHelper.h"
 
-void RvizHelper::displayOnMap(geometry_msgs::Pose initialPose) {
+int markerCounter = 0;
+ros::Publisher pathPub;
+ros::Publisher marker_pub;
+
+void deleteCurrentMarker(ros::Publisher marker_pub) {
+    visualization_msgs::Marker delete_marker;
+    delete_marker.header.frame_id = "map";
+    delete_marker.header.stamp = ros::Time::now();
+    delete_marker.ns = "robot";
+    delete_marker.id = markerCounter-1;
+    delete_marker.action = visualization_msgs::Marker::DELETE;
+    marker_pub.publish(delete_marker);
+}
+
+void RvizHelper::displayOnMap(geometry_msgs::Pose pose, float robotScale) {
     // Create a publisher for the robot marker
     ros::NodeHandle nh;
-    ros::Publisher marker_pub = nh.advertise<visualization_msgs::Marker>("visualization_marker", 10);
+    marker_pub = nh.advertise<visualization_msgs::Marker>("visualization_marker", 10);
+
+    // If a marker is already on the scene, delete it
+    if (markerCounter > 0) {
+        deleteCurrentMarker(marker_pub);
+    }
 
     // Create a marker message
     visualization_msgs::Marker marker;
     marker.header.frame_id = "map";
     marker.header.stamp = ros::Time::now();
     marker.ns = "robot";
-    marker.id = 0;
-    marker.type = visualization_msgs::Marker::CUBE;  // Use CUBE for a rectangular robot
-    marker.action = visualization_msgs::Marker::ADD;
+    // marker.id = 0;
+    marker.id = markerCounter++;
+    marker.type = visualization_msgs::Marker::SPHERE;
+    marker.action = visualization_msgs::Marker::MODIFY;
 
-    marker.pose = initialPose;
+    marker.pose = pose;
 
-    marker.scale.x = .8;  // Replace with your desired dimensions
-    marker.scale.y = .8;
-    marker.scale.z = .8;
+    marker.scale.x = robotScale;  // Replace with your desired dimensions
+    marker.scale.y = robotScale;
+    marker.scale.z = robotScale;
 
     marker.color.r = 0.0;  // Replace with your desired color
     marker.color.g = 1.0;
@@ -40,13 +60,7 @@ void RvizHelper::displayOnMap(geometry_msgs::Pose initialPose) {
 
     // Publish the marker message
     marker_pub.publish(marker);
-
-    // DEBUG
-    std::cout << "displayed robot" << std::endl;
 }
-
-
-ros::Publisher pathPub; // TODO; check if it is the right place
 
 /**
  * Considering the first element in gridPath as the initial position on the map (with grid coordinates), and the last

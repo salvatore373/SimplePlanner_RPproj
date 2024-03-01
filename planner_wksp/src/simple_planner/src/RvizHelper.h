@@ -16,7 +16,7 @@
 
 class RvizHelper {
 public:
-    static void displayOnMap(geometry_msgs::Pose initialPose);
+    static void displayOnMap(geometry_msgs::Pose pose, float robotScale = 1.0);
 
     static void displayPath(std::list <Eigen::Vector2i> gridPath, ImageMap map);
 };

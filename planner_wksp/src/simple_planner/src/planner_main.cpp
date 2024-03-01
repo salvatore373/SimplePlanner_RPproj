@@ -45,15 +45,20 @@ void saveMatrixToFile(Eigen::MatrixXf map, const std::string &filename = "./outp
 * The operations to perform once both the initial and goal poses have been received
 */
 void onPosesReceived(geometry_msgs::Pose initPose, geometry_msgs::Pose goalPose) {
+    // Initialize an empty list
+    std::list <Eigen::Vector2i> path;
+
     // Display the robot on the map
-    RvizHelper::displayOnMap(initPose);
+    RvizHelper::displayOnMap(initPose, map.mapMetaData.resolution * 3);
+    // Remove any previous path on the map
+    RvizHelper::displayPath(path, map);
 
     // Convert the given initial and final position in grid coordinates
     Eigen::Vector2i initialPosition = map.convertWorldToMap((float) initPose.position.x, (float) initPose.position.y);
     Eigen::Vector2i goalPosition = map.convertWorldToMap((float) goalPose.position.x, (float) goalPose.position.y);
     // Compute the path
     PathFinding search(map);
-    std::list<Eigen::Vector2i> path = search.performPathFinding(initialPosition, goalPosition);
+    path = search.performPathFinding(initialPosition, goalPosition);
 
     // DEBUG saveMatrixToFile(search.voronoiMap, "./capperoVoronoi.csv");
 
