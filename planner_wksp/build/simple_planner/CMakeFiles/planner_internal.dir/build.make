@@ -96,25 +96,25 @@ CMakeFiles/planner_internal.dir/src/RvizHelper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/planner_internal.dir/src/RvizHelper.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /rob_prog/planner_wksp/src/simple_planner/src/RvizHelper.cpp -o CMakeFiles/planner_internal.dir/src/RvizHelper.cpp.s
 
-CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o: CMakeFiles/planner_internal.dir/flags.make
-CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o: /rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/rob_prog/planner_wksp/build/simple_planner/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o -c /rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp
+CMakeFiles/planner_internal.dir/src/PathFinding.cpp.o: CMakeFiles/planner_internal.dir/flags.make
+CMakeFiles/planner_internal.dir/src/PathFinding.cpp.o: /rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/rob_prog/planner_wksp/build/simple_planner/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/planner_internal.dir/src/PathFinding.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/planner_internal.dir/src/PathFinding.cpp.o -c /rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp
 
-CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp > CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.i
+CMakeFiles/planner_internal.dir/src/PathFinding.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/planner_internal.dir/src/PathFinding.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp > CMakeFiles/planner_internal.dir/src/PathFinding.cpp.i
 
-CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp -o CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.s
+CMakeFiles/planner_internal.dir/src/PathFinding.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/planner_internal.dir/src/PathFinding.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp -o CMakeFiles/planner_internal.dir/src/PathFinding.cpp.s
 
 # Object files for target planner_internal
 planner_internal_OBJECTS = \
 "CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o" \
 "CMakeFiles/planner_internal.dir/src/RobotPoses.cpp.o" \
 "CMakeFiles/planner_internal.dir/src/RvizHelper.cpp.o" \
-"CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o"
+"CMakeFiles/planner_internal.dir/src/PathFinding.cpp.o"
 
 # External object files for target planner_internal
 planner_internal_EXTERNAL_OBJECTS =
@@ -122,7 +122,7 @@ planner_internal_EXTERNAL_OBJECTS =
 /rob_prog/planner_wksp/devel/.private/simple_planner/lib/libplanner_internal.so: CMakeFiles/planner_internal.dir/src/ImageMap.cpp.o
 /rob_prog/planner_wksp/devel/.private/simple_planner/lib/libplanner_internal.so: CMakeFiles/planner_internal.dir/src/RobotPoses.cpp.o
 /rob_prog/planner_wksp/devel/.private/simple_planner/lib/libplanner_internal.so: CMakeFiles/planner_internal.dir/src/RvizHelper.cpp.o
-/rob_prog/planner_wksp/devel/.private/simple_planner/lib/libplanner_internal.so: CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o
+/rob_prog/planner_wksp/devel/.private/simple_planner/lib/libplanner_internal.so: CMakeFiles/planner_internal.dir/src/PathFinding.cpp.o
 /rob_prog/planner_wksp/devel/.private/simple_planner/lib/libplanner_internal.so: CMakeFiles/planner_internal.dir/build.make
 /rob_prog/planner_wksp/devel/.private/simple_planner/lib/libplanner_internal.so: CMakeFiles/planner_internal.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/rob_prog/planner_wksp/build/simple_planner/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library /rob_prog/planner_wksp/devel/.private/simple_planner/lib/libplanner_internal.so"

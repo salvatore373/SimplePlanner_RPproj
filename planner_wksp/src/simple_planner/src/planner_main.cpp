@@ -2,15 +2,15 @@
 #include "ImageMap.h"
 #include "RobotPoses.h"
 #include "RvizHelper.h"
-#include "UniformCostSearch.h"
+#include "PathFinding.h"
 
 #include "ros/ros.h"
 #include <ros/master.h>
 #include "geometry_msgs/PoseWithCovariance.h"
 #include "geometry_msgs/Pose.h"
 
-// DEBUG
 #include "Eigen/Dense"
+// DEBUG
 #include <fstream>
 
 ImageMap map;
@@ -48,27 +48,22 @@ void onPosesReceived(geometry_msgs::Pose initPose, geometry_msgs::Pose goalPose)
     // Display the robot on the map
     RvizHelper::displayOnMap(initPose);
 
+    // Convert the given initial and final position in grid coordinates
+    Eigen::Vector2i initialPosition = map.convertWorldToMap((float) initPose.position.x, (float) initPose.position.y);
+    Eigen::Vector2i goalPosition = map.convertWorldToMap((float) goalPose.position.x, (float) goalPose.position.y);
     // Compute the path
-    UniformCostSearch search(map);
-    // compute distance map (distance of each pixel from closest obstacle) -> col and row deriv -> magnitude map
-//    Eigen::MatrixXf distanceMap = search.computeDistanceMap(search.map.grid, 50);
-//    Eigen::MatrixXf magnitudeMap = search.computeMagnitudeDerivative(distanceMap);
-//    Eigen::MatrixXf rowMap = search.computeRowDerivative(distanceMap);
-//    Eigen::MatrixXf colMap = search.computeColumnDerivative(distanceMap);
-//    saveMatrixToFile(search.map.grid.cast<float>(), "./original_map.csv");
-//    saveMatrixToFile(distanceMap, "./distance_map.csv");
-//    saveMatrixToFile(rowMap, "./row_map.csv");
-//    saveMatrixToFile(colMap, "./col_map.csv");
-//    saveMatrixToFile(magnitudeMap, "./magnitude_map.csv");
+    PathFinding search(map);
+    std::list<Eigen::Vector2i> path = search.performPathFinding(initialPosition, goalPosition);
 
-    std::list <Eigen::Vector2i> path = search.performUniformCostSearch(Eigen::Vector2i(1, 1), Eigen::Vector2i(4, 4));
-    for (auto e: path) {
-        std::cout << e.x() << "," << e.y() << " -> ";
-    }
-    std::cout << std::endl;
+    // DEBUG saveMatrixToFile(search.voronoiMap, "./capperoVoronoi.csv");
 
-    // TODo: complete
-    RvizHelper::displayPath();
+    // DEBUG
+//    for (auto e: path) {
+//        std::cout << e.x() << "," << e.y() << " -> ";
+//    }
+//    std::cout << std::endl;
+
+    RvizHelper::displayPath(path, map);
 };
 
 int main(int argc, char **argv) {
@@ -91,9 +86,6 @@ int main(int argc, char **argv) {
     poses.setOnPoseReceivedCallback(onPosesReceived);
     poses.retrieveInitialPose();
     poses.retrieveGoalPose();
-
-    // DEBUG
-    RvizHelper::displayPath();
 
     // Start the communications
     ros::spin();

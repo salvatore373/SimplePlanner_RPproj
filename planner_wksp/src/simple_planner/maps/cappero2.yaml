@@ -1,6 +1,6 @@
 image: ./cappero2.pgm
-# resolution: 0.050000
-resolution: 0.1
+# resolution: 0.1
+resolution: 0.15
 origin: [0.0, 0.0, 0.0]
 negate: 0
 occupied_thresh: 0.65

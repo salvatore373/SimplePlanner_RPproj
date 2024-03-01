@@ -5,7 +5,6 @@
 #include "RvizHelper.h"
 
 void RvizHelper::displayOnMap(geometry_msgs::Pose initialPose) {
-// void RobotDisplayer::displayOnMap() {
     // Create a publisher for the robot marker
     ros::NodeHandle nh;
     ros::Publisher marker_pub = nh.advertise<visualization_msgs::Marker>("visualization_marker", 10);
@@ -19,13 +18,6 @@ void RvizHelper::displayOnMap(geometry_msgs::Pose initialPose) {
     marker.type = visualization_msgs::Marker::CUBE;  // Use CUBE for a rectangular robot
     marker.action = visualization_msgs::Marker::ADD;
 
-//    marker.pose.position.x = 0.0;  // Replace with your desired initial pose
-//    marker.pose.position.y = 0.0;
-//    marker.pose.position.z = 0.0;
-//    marker.pose.orientation.x = 0.0;
-//    marker.pose.orientation.y = 0.0;
-//    marker.pose.orientation.z = 0.0;
-//    marker.pose.orientation.w = 1.0;
     marker.pose = initialPose;
 
     marker.scale.x = .8;  // Replace with your desired dimensions
@@ -50,40 +42,47 @@ void RvizHelper::displayOnMap(geometry_msgs::Pose initialPose) {
     marker_pub.publish(marker);
 
     // DEBUG
-    std::cout << "robot published" << std::endl;
+    std::cout << "displayed robot" << std::endl;
 }
 
-ros::Publisher pathPub;
-void RvizHelper::displayPath() {
+
+ros::Publisher pathPub; // TODO; check if it is the right place
+
+/**
+ * Considering the first element in gridPath as the initial position on the map (with grid coordinates), and the last
+ * element as the goal position, displays on ROS the path from the initial to the final position as a line.
+ */
+void RvizHelper::displayPath(std::list <Eigen::Vector2i> gridPath, ImageMap map) {
     ros::NodeHandle nh;
     // Create a publisher for the path
     pathPub = nh.advertise<nav_msgs::Path>("path", 10);
 
-
     // Create a path message
-
-    // path.size() = 30
+    int pathSize = gridPath.size();
     nav_msgs::Path waypoints;
     waypoints.header.frame_id = "map";
     waypoints.header.stamp = ros::Time::now();
-    waypoints.poses.resize(30);
+    waypoints.poses.resize(pathSize);
 
-    // DEBUG: 10 steps to fill a square
-
-    for (int i = 0; i < 15; i++)
-    {
+    // Add all the points that build the path
+    auto gridVecPointer = gridPath.begin();
+    for (int i = 0; i < pathSize; i++) {
         // Path finds integers of grid cells, we need to publish waypoints
         // as doubles, and add .05 meters so we aim for middle of the cells
+        Eigen::Vector2i gridVec = *gridVecPointer;
+        gridVecPointer++;
         waypoints.poses[i].header.frame_id = "map";
         waypoints.poses[i].header.stamp = ros::Time::now();
-        waypoints.poses[i].pose.position.x = (double)(i) / 10 + .05;
-        waypoints.poses[i].pose.position.y = (double)(i) / 10 + .05;
+        Eigen::Vector2f worldVec = map.convertMapToWorld(gridVec.x(), gridVec.y());
+        waypoints.poses[i].pose.position.x = worldVec.x() + 0.25; // add 0.5 to show the line at the center of the cell
+        waypoints.poses[i].pose.position.y = worldVec.y() + 0.25; // add 0.5 to show the line at the center of the cell
         waypoints.poses[i].pose.position.z = 0;
         waypoints.poses[i].pose.orientation.x = 0;
         waypoints.poses[i].pose.orientation.y = 0;
         waypoints.poses[i].pose.orientation.z = 0;
         waypoints.poses[i].pose.orientation.w = 1;
     }
+
     // Wait to be connected to the subscribers
     while (pathPub.getNumSubscribers() < 1) {
         ros::WallDuration sleep_t(0.1);
@@ -93,7 +92,4 @@ void RvizHelper::displayPath() {
     // TODO: Two calls are needed?
     // pathPub.publish(waypoints);
     pathPub.publish(waypoints);
-
-    // DEBUG
-    std::cout << "path published" << std::endl;
 }

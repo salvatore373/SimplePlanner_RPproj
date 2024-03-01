@@ -932,6 +932,20 @@ nav_msgs/MapMetaData.h
 nav_msgs/OccupancyGrid.h
 /rob_prog/planner_wksp/src/simple_planner/src/nav_msgs/OccupancyGrid.h
 
+/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.h
+ImageMap.h
+/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h
+Eigen/Dense
+/rob_prog/planner_wksp/src/simple_planner/src/Eigen/Dense
+queue
+/rob_prog/planner_wksp/src/simple_planner/src/queue
+list
+-
+set
+-
+limits.h
+/rob_prog/planner_wksp/src/simple_planner/src/limits.h
+
 /rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.h
 iostream
 -
@@ -949,6 +963,8 @@ nav_msgs/MapMetaData.h
 /rob_prog/planner_wksp/src/simple_planner/src/RvizHelper.h
 iostream
 -
+ImageMap.h
+/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h
 ros/ros.h
 /rob_prog/planner_wksp/src/simple_planner/src/ros/ros.h
 visualization_msgs/Marker.h
@@ -957,18 +973,6 @@ nav_msgs/Path.h
 /rob_prog/planner_wksp/src/simple_planner/src/nav_msgs/Path.h
 geometry_msgs/PoseStamped.h
 /rob_prog/planner_wksp/src/simple_planner/src/geometry_msgs/PoseStamped.h
-
-/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h
-ImageMap.h
-/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h
-Eigen/Dense
-/rob_prog/planner_wksp/src/simple_planner/src/Eigen/Dense
-queue
-/rob_prog/planner_wksp/src/simple_planner/src/queue
-list
--
-set
--
 
 /rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp
 iostream
@@ -979,8 +983,8 @@ RobotPoses.h
 /rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.h
 RvizHelper.h
 /rob_prog/planner_wksp/src/simple_planner/src/RvizHelper.h
-UniformCostSearch.h
-/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h
+PathFinding.h
+/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.h
 ros/ros.h
 /rob_prog/planner_wksp/src/simple_planner/src/ros/ros.h
 ros/master.h

@@ -778,10 +778,6 @@ vector
 time.h
 -
 
-/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.cpp
-ImageMap.h
-/rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h
-
 /rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h
 fstream
 -
@@ -798,11 +794,11 @@ nav_msgs/MapMetaData.h
 nav_msgs/OccupancyGrid.h
 /rob_prog/planner_wksp/src/simple_planner/src/nav_msgs/OccupancyGrid.h
 
-/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.cpp
-UniformCostSearch.h
-/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h
+/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp
+PathFinding.h
+/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.h
 
-/rob_prog/planner_wksp/src/simple_planner/src/UniformCostSearch.h
+/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.h
 ImageMap.h
 /rob_prog/planner_wksp/src/simple_planner/src/ImageMap.h
 Eigen/Dense
@@ -813,6 +809,8 @@ list
 -
 set
 -
+limits.h
+/rob_prog/planner_wksp/src/simple_planner/src/limits.h
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

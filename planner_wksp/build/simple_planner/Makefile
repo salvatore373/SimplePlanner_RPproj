@@ -532,6 +532,33 @@ src/ImageMap.cpp.s:
 	$(MAKE) -f CMakeFiles/planner_internal.dir/build.make CMakeFiles/planner_internal.dir/src/ImageMap.cpp.s
 .PHONY : src/ImageMap.cpp.s
 
+src/PathFinding.o: src/PathFinding.cpp.o
+
+.PHONY : src/PathFinding.o
+
+# target to build an object file
+src/PathFinding.cpp.o:
+	$(MAKE) -f CMakeFiles/planner_internal.dir/build.make CMakeFiles/planner_internal.dir/src/PathFinding.cpp.o
+.PHONY : src/PathFinding.cpp.o
+
+src/PathFinding.i: src/PathFinding.cpp.i
+
+.PHONY : src/PathFinding.i
+
+# target to preprocess a source file
+src/PathFinding.cpp.i:
+	$(MAKE) -f CMakeFiles/planner_internal.dir/build.make CMakeFiles/planner_internal.dir/src/PathFinding.cpp.i
+.PHONY : src/PathFinding.cpp.i
+
+src/PathFinding.s: src/PathFinding.cpp.s
+
+.PHONY : src/PathFinding.s
+
+# target to generate assembly for a file
+src/PathFinding.cpp.s:
+	$(MAKE) -f CMakeFiles/planner_internal.dir/build.make CMakeFiles/planner_internal.dir/src/PathFinding.cpp.s
+.PHONY : src/PathFinding.cpp.s
+
 src/RobotPoses.o: src/RobotPoses.cpp.o
 
 .PHONY : src/RobotPoses.o
@@ -585,33 +612,6 @@ src/RvizHelper.s: src/RvizHelper.cpp.s
 src/RvizHelper.cpp.s:
 	$(MAKE) -f CMakeFiles/planner_internal.dir/build.make CMakeFiles/planner_internal.dir/src/RvizHelper.cpp.s
 .PHONY : src/RvizHelper.cpp.s
-
-src/UniformCostSearch.o: src/UniformCostSearch.cpp.o
-
-.PHONY : src/UniformCostSearch.o
-
-# target to build an object file
-src/UniformCostSearch.cpp.o:
-	$(MAKE) -f CMakeFiles/planner_internal.dir/build.make CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.o
-.PHONY : src/UniformCostSearch.cpp.o
-
-src/UniformCostSearch.i: src/UniformCostSearch.cpp.i
-
-.PHONY : src/UniformCostSearch.i
-
-# target to preprocess a source file
-src/UniformCostSearch.cpp.i:
-	$(MAKE) -f CMakeFiles/planner_internal.dir/build.make CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.i
-.PHONY : src/UniformCostSearch.cpp.i
-
-src/UniformCostSearch.s: src/UniformCostSearch.cpp.s
-
-.PHONY : src/UniformCostSearch.s
-
-# target to generate assembly for a file
-src/UniformCostSearch.cpp.s:
-	$(MAKE) -f CMakeFiles/planner_internal.dir/build.make CMakeFiles/planner_internal.dir/src/UniformCostSearch.cpp.s
-.PHONY : src/UniformCostSearch.cpp.s
 
 src/planner_main.o: src/planner_main.cpp.o
 
@@ -682,15 +682,15 @@ help:
 	@echo "... src/ImageMap.o"
 	@echo "... src/ImageMap.i"
 	@echo "... src/ImageMap.s"
+	@echo "... src/PathFinding.o"
+	@echo "... src/PathFinding.i"
+	@echo "... src/PathFinding.s"
 	@echo "... src/RobotPoses.o"
 	@echo "... src/RobotPoses.i"
 	@echo "... src/RobotPoses.s"
 	@echo "... src/RvizHelper.o"
 	@echo "... src/RvizHelper.i"
 	@echo "... src/RvizHelper.s"
-	@echo "... src/UniformCostSearch.o"
-	@echo "... src/UniformCostSearch.i"
-	@echo "... src/UniformCostSearch.s"
 	@echo "... src/planner_main.o"
 	@echo "... src/planner_main.i"
 	@echo "... src/planner_main.s"

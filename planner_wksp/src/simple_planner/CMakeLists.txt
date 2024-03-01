@@ -128,7 +128,7 @@ add_library(planner_internal SHARED
         src/ImageMap.cpp
         src/RobotPoses.cpp
         src/RvizHelper.cpp
-        src/UniformCostSearch.cpp
+        src/PathFinding.cpp
         )
 include_directories(/usr/include/eigen3)
 

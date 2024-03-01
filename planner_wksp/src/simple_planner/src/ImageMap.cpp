@@ -23,9 +23,6 @@ void ImageMap::retrieveMapMetadata(const nav_msgs::MapMetaData::ConstPtr &msg) {
     height = msg->height;
     num_rows = height;
     num_cols = width;
-
-    // DEBUG
-    cout << "map metadata received" << endl;
 }
 
 void ImageMap::fillMap(const nav_msgs::OccupancyGrid::ConstPtr &msg) {
@@ -42,10 +39,6 @@ void ImageMap::fillMap(const nav_msgs::OccupancyGrid::ConstPtr &msg) {
         }
     }
 
-    // DEBUG
-    cout << "map received" << endl;
-    // Display the map
-    // cout << grid << endl;
 }
 
 void ImageMap::retrieveMap() {

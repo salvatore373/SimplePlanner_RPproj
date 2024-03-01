@@ -1,0 +1,23 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:[m[K In member function ‘[01m[Kvoid RobotPoses::retrieveInitPose(const ConstPtr&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:19:20:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator&&[m[K’ (operand types are ‘[01m[Kgeometry_msgs::Pose[m[K’ {aka ‘[01m[Kgeometry_msgs::Pose_<std::allocator<void> >[m[K’} and ‘[01m[Kgeometry_msgs::Pose[m[K’ {aka ‘[01m[Kgeometry_msgs::Pose_<std::allocator<void> >[m[K’})
+   19 |     if([32m[KinitialPose[m[K [01;31m[K&&[m[K [34m[KgoalPose[m[K) {
+      |        [32m[K~~~~~~~~~~~[m[K [01;31m[K^~[m[K [34m[K~~~~~~~~[m[K
+      |        [32m[K|[m[K              [34m[K|[m[K
+      |        [32m[KPose_<[...]>[m[K   [34m[KPose_<[...]>[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:19:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Koperator&&(bool, bool)[m[K’ <built-in>
+   19 |     if([01;36m[KinitialPose && goalPose[m[K) {
+      |        [01;36m[K~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:19:20:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Kgeometry_msgs::Pose[m[K’ {aka ‘[01m[Kgeometry_msgs::Pose_<std::allocator<void> >[m[K’} to ‘[01m[Kbool[m[K’
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:[m[K In member function ‘[01m[Kvoid RobotPoses::retrieveGoalPose(const ConstPtr&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:35:20:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator&&[m[K’ (operand types are ‘[01m[Kgeometry_msgs::Pose[m[K’ {aka ‘[01m[Kgeometry_msgs::Pose_<std::allocator<void> >[m[K’} and ‘[01m[Kgeometry_msgs::Pose[m[K’ {aka ‘[01m[Kgeometry_msgs::Pose_<std::allocator<void> >[m[K’})
+   35 |     if([32m[KinitialPose[m[K [01;31m[K&&[m[K [34m[KgoalPose[m[K) {
+      |        [32m[K~~~~~~~~~~~[m[K [01;31m[K^~[m[K [34m[K~~~~~~~~[m[K
+      |        [32m[K|[m[K              [34m[K|[m[K
+      |        [32m[KPose_<[...]>[m[K   [34m[KPose_<[...]>[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:35:20:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Koperator&&(bool, bool)[m[K’ <built-in>
+   35 |     if([01;36m[KinitialPose && goalPose[m[K) {
+      |        [01;36m[K~~~~~~~~~~~~^~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:35:20:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Kgeometry_msgs::Pose[m[K’ {aka ‘[01m[Kgeometry_msgs::Pose_<std::allocator<void> >[m[K’} to ‘[01m[Kbool[m[K’
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:76: CMakeFiles/planner_internal.dir/src/RobotPoses.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,12 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:92:29:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KRvizHelper::displayPath()[m[K’
+   92 |     RvizHelper::displayPath([01;31m[K)[m[K;
+      |                             [01;31m[K^[m[K
+In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/planner_main.cpp:4[m[K:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RvizHelper.h:21:17:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstatic void RvizHelper::displayPath(std::__cxx11::list<Eigen::Matrix<int, 2, 1> >, ImageMap)[m[K’
+   21 |     static void [01;36m[KdisplayPath[m[K(std::list <Eigen::Vector2i> gridPath, ImageMap map);
+      |                 [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RvizHelper.h:21:17:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+make[2]: *** [CMakeFiles/simple_planner_node.dir/build.make:63: CMakeFiles/simple_planner_node.dir/src/planner_main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:508: CMakeFiles/simple_planner_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

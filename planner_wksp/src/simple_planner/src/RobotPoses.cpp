@@ -15,7 +15,11 @@ void RobotPoses::setOnPoseReceivedCallback(OnPoseReceivedCallbackType poseCallba
 }
 
 void RobotPoses::retrieveInitPose(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr &msg) {
-    cout << "received initial pose" << endl;
+    // Reset the poses if new ones are to be given
+    if(initPoseReceived && goalPoseReceived) {
+        initPoseReceived = false;
+        goalPoseReceived = false;
+    }
 
     // Extract the initial pose from the message
     initialPose = (msg->pose).pose;
@@ -27,7 +31,11 @@ void RobotPoses::retrieveInitPose(const geometry_msgs::PoseWithCovarianceStamped
 }
 
 void RobotPoses::retrieveGoalPose(const geometry_msgs::PoseStamped::ConstPtr &msg) {
-    cout << "received goal pose" << endl;
+    // Reset the poses if new ones are to be given
+    if(initPoseReceived && goalPoseReceived) {
+        initPoseReceived = false;
+        goalPoseReceived = false;
+    }
 
     // Extract the initial pose from the message
     goalPose = msg->pose;

@@ -1,0 +1,14 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:[m[K In member function ‘[01m[Kvoid RobotPoses::retrieveInitPose(const ConstPtr&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:19:8:[m[K [01;31m[Kerror: [m[K‘[01m[KintialPose[m[K’ was not declared in this scope; did you mean ‘[01m[KinitialPose[m[K’?
+   19 |     if([01;31m[KintialPose[m[K && goalPose) {
+      |        [01;31m[K^~~~~~~~~~[m[K
+      |        [32m[KinitialPose[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:[m[K In member function ‘[01m[Kvoid RobotPoses::retrieveGoalPose(const ConstPtr&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RobotPoses.cpp:35:8:[m[K [01;31m[Kerror: [m[K‘[01m[KintialPose[m[K’ was not declared in this scope; did you mean ‘[01m[KinitialPose[m[K’?
+   35 |     if([01;31m[KintialPose[m[K && goalPose) {
+      |        [01;31m[K^~~~~~~~~~[m[K
+      |        [32m[KinitialPose[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:76: CMakeFiles/planner_internal.dir/src/RobotPoses.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

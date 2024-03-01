@@ -7,6 +7,8 @@
 
 #include <iostream>
 
+#include "ImageMap.h"
+
 #include "ros/ros.h"
 #include "visualization_msgs/Marker.h"
 #include "nav_msgs/Path.h"
@@ -15,9 +17,8 @@
 class RvizHelper {
 public:
     static void displayOnMap(geometry_msgs::Pose initialPose);
-    // static void displayOnMap();
 
-    static void displayPath();
+    static void displayPath(std::list <Eigen::Vector2i> gridPath, ImageMap map);
 };
 
 
