@@ -194,19 +194,32 @@ PathFinding::findElementByCoordsInSet(int x, int y, std::multiset <SearchNode, S
 }
 
 /**
+ * Returns the closest element in closedList to the given goalPosition.
+ */
+SearchNode *getClosestNodeToGoal(std::list <SearchNode> *closedList, const Eigen::Vector2i &goalPosition) {
+    closedList->sort([goalPosition](const SearchNode &n1, const SearchNode &n2) {
+        return (goalPosition - Eigen::Vector2i(n1.x, n1.y)).norm() <
+               (goalPosition - Eigen::Vector2i(n2.x, n2.y)).norm();
+    });
+
+    return &(closedList->front());
+}
+
+/**
  * Computes the best path from the initial position to the goal, according to the A* algorithm.
  * In the following implementation of the A* algorithm the values of the cells of the Voronoi diagram are used as
  * h-cost, while the g-cost is the number of steps from the initial position to the current node.
  * @param initialPosition The initial cell in the map.
  * @param goalPosition The goal cell in the map.
  * @return The path from the initial to the goal position, which consist in a vector of cells positions.
+ * If the goal is not reachable from the provided initial position it returns the path to the closest position
+ * to the goal.
  */
 std::list <Eigen::Vector2i>
 PathFinding::performPathFinding(const Eigen::Vector2i &initialPosition,
                                 const Eigen::Vector2i &goalPosition) {
     std::cout << "Starting to compute the best path from the initial to the goal position..." << std::endl;
 
-    float inf = std::numeric_limits<float>::infinity();
     int num_rows = voronoiMap.rows();
     int num_cols = voronoiMap.cols();
 
@@ -223,6 +236,7 @@ PathFinding::performPathFinding(const Eigen::Vector2i &initialPosition,
     pQueue.emplace(initialPosition.x(), initialPosition.y(),
                    0, SearchNode::getHCostFromVoronoiMap(&voronoiMap, initialPosition.x(), initialPosition.y()));
 
+    SearchNode *nodePtr;
     while (!pQueue.empty()) {
         // Get the top of the queue (the node with minimum gCost)
         SearchNode node = *pQueue.begin();
@@ -248,8 +262,10 @@ PathFinding::performPathFinding(const Eigen::Vector2i &initialPosition,
                 if (u == currPos.x() && v == currPos.y()) continue;
                 // Do not allow movements along the diagonal
                 if (u != currPos.x() && v != currPos.y()) continue;
+                // Do not allow to include an obstacle in the path
+                if (map.grid(u, v) == OBSTACLE) continue;
 
-                float neighborGCost = node.gCost + 1 + (map.grid(u,v) == OBSTACLE ? inf : 0);
+                float neighborGCost = node.gCost + 1;
                 float neighborHCost = SearchNode::getHCostFromVoronoiMap(&voronoiMap, u, v);
                 auto oldNode = findElementByCoordsInSet(u, v, &pQueue);
                 if (!visited(u, v) && oldNode == pQueue.end()) {
@@ -269,5 +285,6 @@ PathFinding::performPathFinding(const Eigen::Vector2i &initialPosition,
     }
 
     // Unable to find the path to the goal
-    throw std::runtime_error("Unable to find a path from the initial provided position to the goal.");
+    std::cerr << "Unable to find a path from the initial provided position to the goal." << std::endl;
+    return getPathFromNode(getClosestNodeToGoal(&closedList, goalPosition));
 }

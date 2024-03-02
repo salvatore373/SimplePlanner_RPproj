@@ -1,0 +1,9 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp:[m[K In function ‘[01m[KSearchNode* getClosestNodeToGoal(std::__cxx11::list<SearchNode>*, const Vector2i&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp:202:29:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::__cxx11::list<SearchNode>::iterator[m[K’ {aka ‘[01m[Kstd::_List_iterator<SearchNode>[m[K’} to ‘[01m[KSearchNode*[m[K’ in return
+  202 |     return [01;31m[KclosedList->begin()[m[K;
+      |            [01;31m[K~~~~~~~~~~~~~~~~~^~[m[K
+      |                             [01;31m[K|[m[K
+      |                             [01;31m[Kstd::__cxx11::list<SearchNode>::iterator {aka std::_List_iterator<SearchNode>}[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:102: CMakeFiles/planner_internal.dir/src/PathFinding.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

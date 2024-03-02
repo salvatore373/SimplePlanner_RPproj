@@ -1,0 +1,12 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp:[m[K In member function ‘[01m[Kstd::__cxx11::list<Eigen::Matrix<int, 2, 1> > PathFinding::performPathFinding(const Vector2i&, const Vector2i&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp:275:28:[m[K [01;31m[Kerror: [m[Kinvalid conversion from ‘[01m[Kconst SearchNode*[m[K’ to ‘[01m[KSearchNode*[m[K’ [[01;31m[K-fpermissive[m[K]
+  275 |     return getPathFromNode([01;31m[K&(*(pQueue.begin()))[m[K);
+      |                            [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+      |                            [01;31m[K|[m[K
+      |                            [01;31m[Kconst SearchNode*[m[K
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp:154:70:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kstd::__cxx11::list<Eigen::Matrix<int, 2, 1> > PathFinding::getPathFromNode(SearchNode*)[m[K’
+  154 | std::list <Eigen::Vector2i> PathFinding::getPathFromNode([01;36m[KSearchNode *node[m[K) {
+      |                                                          [01;36m[K~~~~~~~~~~~~^~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:102: CMakeFiles/planner_internal.dir/src/PathFinding.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

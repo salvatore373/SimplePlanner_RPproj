@@ -1,0 +1,7 @@
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp:[m[K In member function ‘[01m[Kstd::__cxx11::list<Eigen::Matrix<int, 2, 1> > PathFinding::performPathFinding(const Vector2i&, const Vector2i&)[m[K’:
+[01m[K/rob_prog/planner_wksp/src/simple_planner/src/PathFinding.cpp:229:9:[m[K [01;31m[Kerror: [m[K‘[01m[Knode[m[K’ was not declared in this scope
+  229 |         [01;31m[Knode[m[K = *pQueue.begin();
+      |         [01;31m[K^~~~[m[K
+make[2]: *** [CMakeFiles/planner_internal.dir/build.make:102: CMakeFiles/planner_internal.dir/src/PathFinding.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
