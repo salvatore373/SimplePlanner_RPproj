@@ -3,7 +3,8 @@
 
   <!-- Map File -->
 <!--   <arg name="map_file" default="$(find simple_planner)/maps/1707060478160.yaml"/> -->
-  <arg name="map_file" default="$(find simple_planner)/maps/cappero2.yaml"/>
+  <arg name="map_file" default="$(find simple_planner)/maps/1709402519802.yaml"/>
+<!--   <arg name="map_file" default="$(find simple_planner)/maps/cappero2.yaml"/> -->
 
   <!-- Map Server -->
   <!-- Publish: /map, /map_metadata -->

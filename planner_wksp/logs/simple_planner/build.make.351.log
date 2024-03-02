@@ -1,9 +1,0 @@
-[35m[1mScanning dependencies of target planner_internal[0m
-[ 14%] [32mBuilding CXX object CMakeFiles/planner_internal.dir/src/RvizHelper.cpp.o[0m
-In file included from [01m[K/rob_prog/planner_wksp/src/simple_planner/src/RvizHelper.cpp:5[m[K:
-[01m[K/rob_prog/planner_wksp/src/simple_planner/src/RvizHelper.h:24:16:[m[K [01;31m[Kerror: [m[KISO C++ forbids in-class initialization of non-const static member ‘[01m[KRvizHelper::markerCounter[m[K’
-   24 |     static int [01;31m[KmarkerCounter[m[K = 0;
-      |                [01;31m[K^~~~~~~~~~~~~[m[K
-make[2]: *** [CMakeFiles/planner_internal.dir/build.make:89: CMakeFiles/planner_internal.dir/src/RvizHelper.cpp.o] Error 1
-make[1]: *** [CMakeFiles/Makefile2:670: CMakeFiles/planner_internal.dir/all] Error 2
-make: *** [Makefile:141: all] Error 2

@@ -88,8 +88,8 @@ void RvizHelper::displayPath(std::list <Eigen::Vector2i> gridPath, ImageMap map)
         waypoints.poses[i].header.frame_id = "map";
         waypoints.poses[i].header.stamp = ros::Time::now();
         Eigen::Vector2f worldVec = map.convertMapToWorld(gridVec.x(), gridVec.y());
-        waypoints.poses[i].pose.position.x = worldVec.x() + 0.25; // add 0.5 to show the line at the center of the cell
-        waypoints.poses[i].pose.position.y = worldVec.y() + 0.25; // add 0.5 to show the line at the center of the cell
+        waypoints.poses[i].pose.position.x = worldVec.x(); // add 0.5 to show the line at the center of the cell
+        waypoints.poses[i].pose.position.y = worldVec.y(); // add 0.5 to show the line at the center of the cell
         waypoints.poses[i].pose.position.z = 0;
         waypoints.poses[i].pose.orientation.x = 0;
         waypoints.poses[i].pose.orientation.y = 0;

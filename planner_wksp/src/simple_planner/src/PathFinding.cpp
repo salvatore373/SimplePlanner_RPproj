@@ -61,18 +61,6 @@ Eigen::MatrixXf PathFinding::computeMagnitudeDerivative(Eigen::MatrixXf distance
         }
     }
 
-    // For each cell = 0 in distanceMap set the corresponding cell in res
-    // to infinite. This is to avoid that the optimal path contains the minimum value as the obstacles, and to
-    // indicate that those cells should be avoided.
-    float inf = std::numeric_limits<float>::infinity();
-    for (int i = 0; i < num_rows; ++i) {
-        for (int j = 0; j < num_cols; ++j) {
-            if (distanceMap(i, j) == 0) {
-                res(i, j) = inf;
-            }
-        }
-    }
-
     return res;
 }
 
@@ -218,7 +206,7 @@ PathFinding::performPathFinding(const Eigen::Vector2i &initialPosition,
                                 const Eigen::Vector2i &goalPosition) {
     std::cout << "Starting to compute the best path from the initial to the goal position..." << std::endl;
 
-    // Compute the Voronoi diagram
+    float inf = std::numeric_limits<float>::infinity();
     int num_rows = voronoiMap.rows();
     int num_cols = voronoiMap.cols();
 
@@ -261,7 +249,7 @@ PathFinding::performPathFinding(const Eigen::Vector2i &initialPosition,
                 // Do not allow movements along the diagonal
                 if (u != currPos.x() && v != currPos.y()) continue;
 
-                float neighborGCost = node.gCost + 1;
+                float neighborGCost = node.gCost + 1 + (map.grid(u,v) == OBSTACLE ? inf : 0);
                 float neighborHCost = SearchNode::getHCostFromVoronoiMap(&voronoiMap, u, v);
                 auto oldNode = findElementByCoordsInSet(u, v, &pQueue);
                 if (!visited(u, v) && oldNode == pQueue.end()) {

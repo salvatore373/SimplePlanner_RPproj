@@ -60,7 +60,7 @@ void onPosesReceived(geometry_msgs::Pose initPose, geometry_msgs::Pose goalPose)
     PathFinding search(map);
     path = search.performPathFinding(initialPosition, goalPosition);
 
-    // DEBUG saveMatrixToFile(search.voronoiMap, "./capperoVoronoi.csv");
+    // DEBUG saveMatrixToFile(search.voronoiMap, "./my_map2_voronoi.csv");
 
     // DEBUG
 //    for (auto e: path) {
